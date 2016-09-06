@@ -14,7 +14,7 @@ aFirstInteger = 234        // assigns value to previously declared variable
 var aSecondInt = 123       // type is inferred from literal value
 var aThirdInt = aSecondInt // makes a COPY (type inferred), NOT a reference to the same
                            //     integer.  changes to one won't affect the other
-aSecondInt = 1             // 125 replaced with 1
+aSecondInt = 1             // 123 replaced with 1
 print(aThirdInt)           // retained original value
 var aFourthInt = 123
 //aFourthInt = 12.34         // Error: Swift is strongly typed; can't assign a floating
@@ -181,6 +181,11 @@ aFourthSet.contains(123)
 aFourthSet.contains(999)
 aFourthSet.popFirst()
 
+var aThingFromASet = aFourthSet.remove(1234)
+//var total = 5 + aThingFromASet               // error: needs to be unwrapped because remove returns an optional
+
+
+
 
 //
 // if-else
@@ -258,8 +263,14 @@ else {
 // dictionaries
 //
 let aFirstDict: Dictionary<Int,String>            // a dictionary of Int keys and String values
-let aSecondDict: [Int:String]                     // shorthand
+var aSecondDict: [Int:String]                     // shorthand
 aSecondDict = [1: "one", 2: "two", 3: "three"]    // literal assignment
+aSecondDict[5] = "five"
+print(aSecondDict)
+
+var aDictElement = aSecondDict[6]
+
+
 
 let one: String? = aSecondDict[1]                 // dictionaries may return nil
 let four: String? = aSecondDict[4]                // like this; optionals are needed
@@ -284,20 +295,35 @@ let arrayForLoops = [9,8,7,6,5,4,3,2,1,0]
 //for var i = 0; i<arrayForLoops.count; i++ {  // this "C-style" statement is deprecated
 //}                                            //    and a warning is issued
 
+var totalOfRange = 0
 let range = 0..<arrayForLoops.count  // this for-in is a lot more like Python's
-for i in range {
-  let anInt = arrayForLoops[i]
-}
 
-for anInt in arrayForLoops {  // this for-in is similar to a Java-style for-each
-  let aString = String(anInt)
+for i in range {
+  totalOfRange = totalOfRange + arrayForLoops[i]
 }
+print(totalOfRange)
+
+var totalOfAnInts = 0
+for anInt in arrayForLoops {  // this for-in is similar to a Java-style for-each
+  totalOfAnInts = totalOfAnInts + anInt
+}
+print(totalOfAnInts)
 
 for (i, aString) in arrayForLoops.enumerate() { // this for-in uses enumerate, which returns a 
                                                 //    series of tuples.  Not used in iOS
     var interpolated = "index: \(i), value: \(aString)"
 }
 
+//
+// while loop example
+//
+var count = 10
+var totalWhile = 0
+while count > 0 {
+    totalWhile = totalWhile + count
+    count = count - 1
+}
+print(totalWhile)
 
 //
 // enumerations
@@ -363,3 +389,5 @@ case 0...30:
 default:                                // and specify defaults as you'd expect
     print("That is not an age...")
 }
+
+
