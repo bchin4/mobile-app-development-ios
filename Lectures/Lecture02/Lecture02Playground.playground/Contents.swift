@@ -328,6 +328,9 @@ print(totalWhile)
 //
 // enumerations
 //
+enum Flowers {
+    
+}
 
 enum Dogs {                 // an enum works like an enum in Java
     case Lightning
@@ -338,16 +341,34 @@ enum Dogs {                 // an enum works like an enum in Java
 let puppy: Dogs        // enums can be used like other types
 puppy = Dogs.Buttercup // use dot-notation to reference one value
 
+//var rawPuppy = Dogs.Buttercup.rawValue // does not work because there is no raw value
 
 enum Cats: String {           // enums can also use types; e.g. String
     case Slater = "slater"    // each case can be associated with an instance of the type
     case Cutie = "Cutie"
     case MrJ = "Mr. J"
     case Harley = "Harley"
+    case Tom                  // no explicit raw value specified
 }
+
+print(Cats.Slater.rawValue)
+print(Cats.Tom.rawValue)
+
+enum Cards: Int {
+    case NotACard
+    case Ace = 11
+    case Two = 2
+    case Three
+    case Four
+}
+
+print(Cards.NotACard.rawValue)
+print(Cards.Three.rawValue)
+
 
 let kitty: String
 kitty = Cats.Slater.rawValue // the value of the type can be retrieved using .rawValue
+
 
 
 //
@@ -388,6 +409,15 @@ case 0...30:
     print("Still young!")
 default:                                // and specify defaults as you'd expect
     print("That is not an age...")
+}
+
+var myName = "Bobby"
+switch myName {
+    case "Bobby":
+        print("That's right!")
+    default:
+        print("That's wrong.")
+    
 }
 
 
