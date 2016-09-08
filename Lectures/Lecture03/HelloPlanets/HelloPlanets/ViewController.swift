@@ -9,10 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let model = Planets()
+    
+    @IBOutlet var planetLabel: UILabel!
 
+    @IBAction func changePlanet(sender: AnyObject) {
+        planetLabel.text = model.getNextPlanet()
+    }
+    
+    @IBAction func sayHello(sender: AnyObject) {
+        planetLabel.text = model.hello()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        planetLabel.text = model.getNextPlanet()
     }
 
     override func didReceiveMemoryWarning() {
