@@ -27,4 +27,8 @@ class Planets {
         }
         return planets[planetIndex]
     }
+    
+    func hello() -> String {
+        return "Hello, " + planets[planetIndex] + "!"
+    }
 }
