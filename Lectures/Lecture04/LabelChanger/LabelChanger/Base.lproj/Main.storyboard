@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LabelChanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfl-sI-hWS">
+                                <rect key="frame" x="236" y="80" width="129" height="30"/>
+                                <state key="normal" title="Change First Label"/>
+                                <connections>
+                                    <action selector="firstButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ORv-dl-HsR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw6-H9-CY0">
+                                <rect key="frame" x="225" y="334" width="151" height="30"/>
+                                <state key="normal" title="Change Second Label"/>
+                                <connections>
+                                    <action selector="secondButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yjy-BH-Z1t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="autolayout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMj-z0-1SA">
+                                <rect key="frame" x="217" y="279" width="167" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="absolute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDu-3U-Bgp">
+                                <rect key="frame" x="232" y="20" width="137" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zMj-z0-1SA" firstAttribute="top" secondItem="yfl-sI-hWS" secondAttribute="bottom" constant="169" id="29M-Vs-A4Z"/>
+                            <constraint firstItem="zMj-z0-1SA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G2v-RV-n9L"/>
+                            <constraint firstItem="yfl-sI-hWS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G9Q-Qp-8pS"/>
+                            <constraint firstItem="sw6-H9-CY0" firstAttribute="centerX" secondItem="zMj-z0-1SA" secondAttribute="centerX" id="GBs-I2-WTj"/>
+                            <constraint firstItem="sw6-H9-CY0" firstAttribute="top" secondItem="zMj-z0-1SA" secondAttribute="bottom" constant="12" id="Qwi-b1-mUu"/>
+                            <constraint firstItem="zMj-z0-1SA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s6L-1D-AzZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="MDu-3U-Bgp" id="Sar-Cz-VBd"/>
+                        <outlet property="secondLabel" destination="zMj-z0-1SA" id="7KQ-d5-vE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="546" y="490"/>
+        </scene>
+    </scenes>
+</document>
