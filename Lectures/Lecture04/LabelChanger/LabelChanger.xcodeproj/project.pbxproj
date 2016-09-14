@@ -295,6 +295,7 @@
 				607CA57D1D87945D009D42CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
