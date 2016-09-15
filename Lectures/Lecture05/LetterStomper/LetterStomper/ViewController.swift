@@ -9,10 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let DEFAULT_STRING = "Hi, there!"
+    
+    
+    @IBOutlet var outputLabel: UILabel!
+    
+    
+    @IBAction func messageReceived(textField: UITextField) {
+        if let text = textField.text where !text.isEmpty {
+            outputLabel.text = text
+        }
+        else {
+            outputLabel.text = DEFAULT_STRING
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        outputLabel.text = DEFAULT_STRING
     }
 
     override func didReceiveMemoryWarning() {
