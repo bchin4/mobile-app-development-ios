@@ -8,19 +8,60 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     let DEFAULT_STRING = "Hi, there!"
     
     
     @IBOutlet var outputLabel: UILabel!
+    @IBOutlet var stompedTextField: UITextField!
+    @IBOutlet var toStompTextField: UITextField!
     
+    var replacementChar: String?
     
     @IBAction func messageReceived(textField: UITextField) {
         if let text = textField.text where !text.isEmpty {
             outputLabel.text = text
+            updateMessage()
         }
         else {
             outputLabel.text = DEFAULT_STRING
+        }
+    }
+    
+    @IBAction func replacementCharacterChanged(textField: UITextField) {
+        replacementChar = textField.text
+        updateMessage()
+    }
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        stompedTextField.resignFirstResponder()
+        toStompTextField.resignFirstResponder()
+    }
+    
+    func updateMessage() {
+        if let replacement = replacementChar,
+            let old = stompedTextField.text {
+            outputLabel.text =
+                old.stringByReplacingOccurrencesOfString(replacement, withString: "")
+        }
+    }
+    
+    func textField(textField: UITextField,
+                   shouldChangeCharactersInRange range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        //print("current:\(range)")
+        //print("replace:\(string)")
+        
+        if let current = textField.text where !current.isEmpty {
+            return string.characters.count == 0
+        }
+        else
+        if string.characters.count <= 1 {
+            return true
+        }
+        else {
+            return false
         }
     }
     
