@@ -32,9 +32,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateMessage() {
-        if let replacement = replacementChar,
-            let old = stompedTextField.text {
-            let new = old.stringByReplacingOccurrencesOfString(replacement, withString: "*")
+//        if let replacement = replacementChar,
+//            let old = stompedTextField.text {
+//            let new = old.stringByReplacingOccurrencesOfString(replacement, withString: "*")
+//            if new.characters.count > 0 {
+//                outputLabel.text = new
+//            }
+//            else {
+//                outputLabel.text = DEFAULT_STRING
+//            }
+//        }
+        
+        if let old = stompedTextField.text {
+            let new: String
+            if let replacement = replacementChar {
+              new = old.stringByReplacingOccurrencesOfString(replacement, withString: "*")
+            }
+            else {
+                new = old
+            }
             if new.characters.count > 0 {
                 outputLabel.text = new
             }
