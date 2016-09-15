@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     let DEFAULT_STRING = "Hi, there!"
     
-    
     @IBOutlet var outputLabel: UILabel!
     @IBOutlet var stompedTextField: UITextField!
     @IBOutlet var toStompTextField: UITextField!
@@ -19,13 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var replacementChar: String?
     
     @IBAction func messageReceived(textField: UITextField) {
-        if let text = textField.text where !text.isEmpty {
-            outputLabel.text = text
-            updateMessage()
-        }
-        else {
-            outputLabel.text = DEFAULT_STRING
-        }
+        updateMessage()
     }
     
     @IBAction func replacementCharacterChanged(textField: UITextField) {
@@ -41,8 +34,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updateMessage() {
         if let replacement = replacementChar,
             let old = stompedTextField.text {
-            outputLabel.text =
-                old.stringByReplacingOccurrencesOfString(replacement, withString: "")
+            let new = old.stringByReplacingOccurrencesOfString(replacement, withString: "*")
+            if new.characters.count > 0 {
+                outputLabel.text = new
+            }
+            else {
+                outputLabel.text = DEFAULT_STRING
+            }
         }
     }
     
