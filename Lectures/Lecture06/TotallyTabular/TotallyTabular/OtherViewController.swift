@@ -30,4 +30,19 @@ class OtherViewController: UIViewController {
         super.viewDidAppear(animated)
         print("OtherViewController viewDidAppear() called")
     }
+    
+    @IBAction func screenTapped() {
+        view.backgroundColor = randomColor()
+    }
+    
+    func randomColor() -> UIColor {
+        return UIColor(colorLiteralRed: randomFloat(),
+                       green: randomFloat(),
+                       blue: randomFloat(),
+                       alpha: 1.0) // always opaque
+    }
+    
+    func randomFloat() -> Float {
+        return Float(arc4random()) / Float(UINT32_MAX)
+    }
 }

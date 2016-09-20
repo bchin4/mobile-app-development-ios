@@ -17,14 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Red" image="butter" id="gNP-Cz-mYy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1151"/>
+            <point key="canvasLocation" x="1001" y="1122"/>
         </scene>
-        <!--Yellow-->
+        <!--Random-->
         <scene sceneID="qwF-3d-9W4">
             <objects>
                 <viewController id="TzJ-np-VbM" customClass="OtherViewController" customModule="TotallyTabular" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,10 +37,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vao-iQ-JGu" appends="YES" id="Dne-Vn-n9O"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Yellow" image="butter-left" id="5kF-Dc-XtV"/>
+                    <tabBarItem key="tabBarItem" title="Random" image="butter-left" id="5kF-Dc-XtV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEG-Bv-yvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vao-iQ-JGu">
+                    <connections>
+                        <action selector="screenTapped" destination="TzJ-np-VbM" id="Knb-Ke-xC8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1134" y="411"/>
         </scene>
@@ -59,7 +69,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9L-nS-p9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="411"/>
+            <point key="canvasLocation" x="354" y="373"/>
         </scene>
     </scenes>
     <resources>
