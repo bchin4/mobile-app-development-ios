@@ -13,19 +13,19 @@ class Colors {
     var gChannel = [false, false, false]
     var bChannel = [false, false, false]
     
-    func toggleFirstChannel(R r: Bool, G g: Bool, B b: Bool) {
+    func toggleFirstChannel(RED r: Bool, GREEN g: Bool, BLUE b: Bool) {
         rChannel[0] = r
         gChannel[0] = g
         bChannel[0] = b
     }
     
-    func toggleSecondChannel(R r: Bool, G g: Bool, B b: Bool) {
+    func toggleSecondChannel(RED r: Bool, GREEN g: Bool, BLUE b: Bool) {
         rChannel[1] = r
         gChannel[1] = g
         bChannel[1] = b
     }
     
-    func toggleThirdChannel(R r: Bool, G g: Bool, B b: Bool) {
+    func toggleThirdChannel(RED r: Bool, GREEN g: Bool, BLUE b: Bool) {
         rChannel[2] = r
         gChannel[2] = g
         bChannel[2] = b

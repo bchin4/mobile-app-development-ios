@@ -11,21 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     var model = Colors()
-    var mainView: UIView!
     
     override func loadView() {
-        mainView = UIView()
-        view = mainView
-        
-        mainView.backgroundColor = model.getColor()
-        let margins = mainView.layoutMarginsGuide
+        super.loadView()
+        view.backgroundColor = model.getColor()
+        let margins = view.layoutMarginsGuide
 
         // first bar
         let first = getColorBar()
         first.addTarget(self,
                             action: "toggleFirstChannel:",
                             forControlEvents: .ValueChanged)
-        mainView.addSubview(first)
+        view.addSubview(first)
         
         let firstTopConstraint = first.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor, constant: 24)
         let firstLeadingConstraint = first.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor)
@@ -40,7 +37,7 @@ class ViewController: UIViewController {
         second.addTarget(self,
                         action: "toggleSecondChannel:",
                         forControlEvents: .ValueChanged)
-        mainView.addSubview(second)
+        view.addSubview(second)
         
         let secondHorizontalConstraint = second.centerXAnchor.constraintEqualToAnchor(margins.centerXAnchor)
         let secondVerticalConstraint = second.centerYAnchor.constraintEqualToAnchor(margins.centerYAnchor)
@@ -53,7 +50,7 @@ class ViewController: UIViewController {
         third.addTarget(self,
                         action: "toggleThirdChannel:",
                         forControlEvents: .ValueChanged)
-        mainView.addSubview(third)
+        view.addSubview(third)
         
         let thirdTopConstraint = third.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor, constant: -24)
         let thirdLeadingConstraint = third.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor)
@@ -76,26 +73,33 @@ class ViewController: UIViewController {
     
     func toggleFirstChannel(buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
-        model.toggleFirstChannel(R: index == 0, G: index == 1, B: index == 2)
-        mainView.backgroundColor = model.getColor()
+        model.toggleFirstChannel(RED: index == 0,
+                                 GREEN: index == 1,
+                                 BLUE: index == 2)
+        view.backgroundColor = model.getColor()
     }
     
     func toggleSecondChannel(buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
-        model.toggleSecondChannel(R: index == 0, G: index == 1, B: index == 2)
-        mainView.backgroundColor = model.getColor()
+        model.toggleSecondChannel(RED: index == 0,
+                                  GREEN: index == 1,
+                                  BLUE: index == 2)
+        view.backgroundColor = model.getColor()
     }
     
     func toggleThirdChannel(buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
-        model.toggleThirdChannel(R: index == 0, G: index == 1, B: index == 2)
-        mainView.backgroundColor = model.getColor()
+        model.toggleThirdChannel(RED: index == 0,
+                                 GREEN: index == 1,
+                                 BLUE: index == 2)
+        view.backgroundColor = model.getColor()
     }
     
     func getColorBar() -> UISegmentedControl {
         let buttonBar = UISegmentedControl(items: ["Red", "Green", "Blue", "None"])
         
-        buttonBar.backgroundColor = UIColor(colorLiteralRed: 0.5, green: 0.5, blue: 1.0, alpha: 1.0)
+        buttonBar.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        buttonBar.tintColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         buttonBar.selectedSegmentIndex = 3
         
