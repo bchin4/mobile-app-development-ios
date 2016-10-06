@@ -21,7 +21,12 @@ class ViewController: UIViewController {
         let first = getColorBar()
         first.addTarget(self,
                             action: "toggleFirstChannel:",
-                            forControlEvents: .ValueChanged)
+                            forControlEvents: UIControlEvents.ValueChanged)
+        
+        
+        first.frame = CGRect(x: 200, y:200, width: 200, height: 50)
+        print(first.frame)
+        
         view.addSubview(first)
         
         let firstTopConstraint = first.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor, constant: 24)
@@ -31,7 +36,7 @@ class ViewController: UIViewController {
         firstTopConstraint.active = true
         firstLeadingConstraint.active = true
         firstTrailingConstraint.active = true
-        
+
         // second bar
         let second = getColorBar()
         second.addTarget(self,
@@ -41,7 +46,7 @@ class ViewController: UIViewController {
         
         let secondHorizontalConstraint = second.centerXAnchor.constraintEqualToAnchor(margins.centerXAnchor)
         let secondVerticalConstraint = second.centerYAnchor.constraintEqualToAnchor(margins.centerYAnchor)
-        
+
         secondHorizontalConstraint.active = true
         secondVerticalConstraint.active = true
         
