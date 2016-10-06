@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Bottom Center"; ObjectID = "Haa-GX-URo"; */
+"Haa-GX-URo.text" = "Bottom Center";
+
+/* Class = "UILabel"; text = "Top Right"; ObjectID = "Nbc-f9-tA2"; */
+"Nbc-f9-tA2.text" = "Top Right";
+
+/* Class = "UILabel"; text = "Top Left"; ObjectID = "Yfw-y4-HkY"; */
+"Yfw-y4-HkY.text" = "Top Left";
+
+/* Class = "UIButton"; normalTitle = "Make Things Happen"; ObjectID = "gte-XN-2JD"; */
+"gte-XN-2JD.normalTitle" = "Make Things Happen";

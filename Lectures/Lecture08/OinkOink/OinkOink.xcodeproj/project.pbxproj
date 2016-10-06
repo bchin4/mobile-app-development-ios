@@ -15,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6088F4EC1DA61A9500D22A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6088F4ED1DA61BDB00D22A44 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		6088F4EE1DA61BDB00D22A44 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		60B863E41DA5E55000D35A33 /* OinkOink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkOink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B863E71DA5E55000D35A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60B863E91DA5E55000D35A33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				60B863EC1DA5E55000D35A33 /* Base */,
+				6088F4EC1DA61A9500D22A44 /* en */,
+				6088F4ED1DA61BDB00D22A44 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				60B863F11DA5E55000D35A33 /* Base */,
+				6088F4EE1DA61BDB00D22A44 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				60B863F81DA5E55000D35A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
