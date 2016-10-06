@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var topLeftLabel: UILabel!
+    @IBOutlet var topRightLabel: UILabel!
+    @IBOutlet var bottomCenterLabel: UILabel!
+    
+    @IBAction func makeThingsHappen(sender: UIButton) {
+        print("clicked!")
+    }
     
     
     override func viewDidLoad() {

@@ -34,6 +34,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gte-XN-2JD">
                                 <rect key="frame" x="115" y="319" width="145" height="30"/>
                                 <state key="normal" title="Make Things Happen"/>
+                                <connections>
+                                    <action selector="makeThingsHappen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1n-Bs-Vip"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Right" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbc-f9-tA2">
                                 <rect key="frame" x="208" y="62" width="151" height="43"/>
@@ -59,6 +62,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bottomCenterLabel" destination="Haa-GX-URo" id="BCD-WO-vhP"/>
+                        <outlet property="topLeftLabel" destination="Yfw-y4-HkY" id="LYK-8c-Ozb"/>
+                        <outlet property="topRightLabel" destination="Nbc-f9-tA2" id="D5d-xh-hWL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
