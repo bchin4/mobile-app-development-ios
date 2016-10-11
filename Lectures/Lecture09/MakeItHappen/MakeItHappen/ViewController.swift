@@ -54,8 +54,17 @@ class ViewController: UIViewController {
     func animateBackground() {
         UIView.animate(
             withDuration: 2,
+            delay: 0,
+            options: [],
             animations: { () -> Void in
-            self.view.backgroundColor = self.randomColor(alpha: 0.5)
+                self.view.backgroundColor = self.randomColor(alpha: 1.0)
+            },
+            completion: { (Bool) -> Void in
+                UIView.animate(
+                    withDuration: 2.0,
+                    animations: { () -> Void in
+                        self.view.backgroundColor = UIColor.white
+                })
         })
     }
     
