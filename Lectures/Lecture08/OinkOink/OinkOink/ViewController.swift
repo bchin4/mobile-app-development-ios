@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var topRightLabel: UILabel!
     @IBOutlet var bottomCenterLabel: UILabel!
     
-    @IBAction func makeThingsHappen(sender: UIButton) {
+    @IBAction func makeThingsHappen(_ sender: UIButton) {
         print("clicked!")
     }
     
@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // let topLeftText = "Well, not quite top left."
+        let topLeftText = NSLocalizedString("Top Left", comment: "The text for the label displayed near the top left")
+        topLeftLabel.text = topLeftText
+        
+        let bottomCenterText = NSLocalizedString("Bottom Center", comment: "The text for the bottom center label")
+        bottomCenterLabel.text = bottomCenterText
     }
 
     override func didReceiveMemoryWarning() {

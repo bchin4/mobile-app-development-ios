@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6048E70C1DA6A7260061BD59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6048E70E1DA6A7260061BD59 /* Localizable.strings */; };
 		60B863E81DA5E55000D35A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B863E71DA5E55000D35A33 /* AppDelegate.swift */; };
 		60B863EA1DA5E55000D35A33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B863E91DA5E55000D35A33 /* ViewController.swift */; };
 		60B863ED1DA5E55000D35A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B863EB1DA5E55000D35A33 /* Main.storyboard */; };
@@ -15,9 +16,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6048E70D1DA6A7260061BD59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6048E70F1DA6ACBD0061BD59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6048E7101DA6ACBE0061BD59 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6088F4EC1DA61A9500D22A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6088F4ED1DA61BDB00D22A44 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		6088F4EE1DA61BDB00D22A44 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6088F4F41DA6960D00D22A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		60B863E41DA5E55000D35A33 /* OinkOink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkOink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B863E71DA5E55000D35A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60B863E91DA5E55000D35A33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 		60B863DB1DA5E54F00D35A33 = {
 			isa = PBXGroup;
 			children = (
+				6048E70E1DA6A7260061BD59 /* Localizable.strings */,
 				60B863E61DA5E55000D35A33 /* OinkOink */,
 				60B863E51DA5E55000D35A33 /* Products */,
 			);
@@ -100,6 +106,7 @@
 					60B863E31DA5E55000D35A33 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5KVHK79MUM;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -110,6 +117,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 60B863DB1DA5E54F00D35A33;
 			productRefGroup = 60B863E51DA5E55000D35A33 /* Products */;
@@ -127,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60B863F21DA5E55000D35A33 /* LaunchScreen.storyboard in Resources */,
+				6048E70C1DA6A7260061BD59 /* Localizable.strings in Resources */,
 				60B863EF1DA5E55000D35A33 /* Assets.xcassets in Resources */,
 				60B863ED1DA5E55000D35A33 /* Main.storyboard in Resources */,
 			);
@@ -147,6 +156,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6048E70E1DA6A7260061BD59 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6048E70D1DA6A7260061BD59 /* Base */,
+				6048E70F1DA6ACBD0061BD59 /* en */,
+				6048E7101DA6ACBE0061BD59 /* fr */,
+			);
+			name = Localizable.strings;
+			path = OinkOink;
+			sourceTree = "<group>";
+		};
 		60B863EB1DA5E55000D35A33 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -162,6 +182,7 @@
 			children = (
 				60B863F11DA5E55000D35A33 /* Base */,
 				6088F4EE1DA61BDB00D22A44 /* fr */,
+				6088F4F41DA6960D00D22A44 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -260,6 +281,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mobappdev.OinkOink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -271,6 +293,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mobappdev.OinkOink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
