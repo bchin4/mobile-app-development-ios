@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         animateBottomRightBegin()
         animateBottomLeftBegin()
         animateMakeItHappenBegin()
+        
+        // assign a variable to a closure
+        let clickCounter = { (number: Int) -> Void in
+            print("times clicked: " + number.description)
+        }
+        
+        //then call it
+        clickCounter(animationCount)
     }
     
     func animateBackground() {
