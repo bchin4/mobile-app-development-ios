@@ -10,11 +10,11 @@ import UIKit
 
 class Game: NSObject {
     var name: String
-    var genre: String
+    var genre: Genre
     var releaseYear: Int
     var rating: Int
     
-    init(_ name: String, _ genre: String,
+    init(_ name: String, _ genre: Genre,
          _ releaseYear: Int, _ rating: Int) {
         self.name = name
         self.genre = genre
@@ -22,7 +22,7 @@ class Game: NSObject {
         self.rating = rating
     }
     
-    convenience init(_ name: String, _ genre: String,
+    convenience init(_ name: String, _ genre: Genre,
                      _ releaseYear: Int) {
         self.init(name, genre, releaseYear, 0)
     }

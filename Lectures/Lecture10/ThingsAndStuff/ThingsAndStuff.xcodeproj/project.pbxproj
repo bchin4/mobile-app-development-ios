@@ -14,6 +14,8 @@
 		600B21DA1DAEDE2B002F398B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600B21D81DAEDE2B002F398B /* LaunchScreen.storyboard */; };
 		600B21E41DAEE64A002F398B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B21E31DAEE64A002F398B /* Game.swift */; };
 		600B21E61DAEE7C3002F398B /* GameLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B21E51DAEE7C3002F398B /* GameLibrary.swift */; };
+		600B21E81DAEF0D1002F398B /* GameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B21E71DAEF0D1002F398B /* GameSection.swift */; };
+		600B21EA1DAEF14D002F398B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B21E91DAEF14D002F398B /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		600B21DB1DAEDE2B002F398B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		600B21E31DAEE64A002F398B /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		600B21E51DAEE7C3002F398B /* GameLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibrary.swift; sourceTree = "<group>"; };
+		600B21E71DAEF0D1002F398B /* GameSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSection.swift; sourceTree = "<group>"; };
+		600B21E91DAEF14D002F398B /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				600B21DB1DAEDE2B002F398B /* Info.plist */,
 				600B21E31DAEE64A002F398B /* Game.swift */,
 				600B21E51DAEE7C3002F398B /* GameLibrary.swift */,
+				600B21E71DAEF0D1002F398B /* GameSection.swift */,
+				600B21E91DAEF14D002F398B /* Genre.swift */,
 			);
 			path = ThingsAndStuff;
 			sourceTree = "<group>";
@@ -146,7 +152,9 @@
 				600B21D21DAEDE2B002F398B /* ViewController.swift in Sources */,
 				600B21E41DAEE64A002F398B /* Game.swift in Sources */,
 				600B21D01DAEDE2B002F398B /* AppDelegate.swift in Sources */,
+				600B21EA1DAEF14D002F398B /* Genre.swift in Sources */,
 				600B21E61DAEE7C3002F398B /* GameLibrary.swift in Sources */,
+				600B21E81DAEF0D1002F398B /* GameSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
