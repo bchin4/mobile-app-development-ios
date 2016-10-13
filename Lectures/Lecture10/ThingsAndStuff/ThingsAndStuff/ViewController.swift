@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        sections = GameLibrary().getGameSections()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +44,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
         let game = sections[indexPath.section].games[indexPath.row]
         
         cell.textLabel?.text = game.name
