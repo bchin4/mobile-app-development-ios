@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    //var library: GameLibrary!
     var sections: [GameSection]!
     
     override func viewDidLoad() {

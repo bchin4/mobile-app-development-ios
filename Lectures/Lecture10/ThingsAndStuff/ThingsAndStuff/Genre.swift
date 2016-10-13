@@ -14,4 +14,6 @@ enum Genre: String {
     case TeamShooter = "Team Shooter"
     case Shooter = "Shooter"
     case Platformer = "Platformer"
+    case FirstPersonShooter = "First Person Shooter"
+    case TowerDefense = "Tower Defense"
 }
