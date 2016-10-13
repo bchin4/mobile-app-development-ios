@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    var library: GameLibrary!
+    //var library: GameLibrary!
+    var sections: [GameSection]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +31,21 @@ class ViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return library.getGenreCount()
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return library.getGameSections()[section].genre.rawValue
+        return sections[section].genre.rawValue
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return library.getGameSections()[section].games.count
+        return sections[section].games.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        let game = library.getGameSections()[indexPath.section].games[indexPath.row]
+        let game = sections[indexPath.section].games[indexPath.row]
         
         cell.textLabel?.text = game.name
         cell.detailTextLabel?.text = "\(game.releaseYear)"

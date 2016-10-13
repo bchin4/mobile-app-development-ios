@@ -17,17 +17,16 @@ class GameLibrary {
         addGame("The Legend of Zelda", .ActionRPG, 1986)
         addGame("Mass Effect", .WesternRPG, 2007)
         addGame("Final Fantasy VII", .JRPG, 1994)
+        addGame("Chrono Trigger", .JRPG, 1995)
+        addGame("Team Fortress 2", .TeamShooter, 2007)
         addGame("The Witcher 3", .WesternRPG, 2015)
         addGame("Overwatch", .TeamShooter, 2016)
-    }
-    
-    func getGenreCount() -> Int {
-        return games.count
     }
     
     func getGameSections() -> [GameSection] {
         var sections = [GameSection]()
         for (genre, gamesInGenre) in games {
+            print("\(genre):\(gamesInGenre.count)")
             let gameSection = GameSection(genre: genre, games: gamesInGenre)
             sections.append(gameSection)
         }
@@ -35,10 +34,14 @@ class GameLibrary {
     }
     
     func addGame(_ game: Game) {
+        print("TAS: adding \(game.name)")
         if var gamesInGenre = games[game.genre] {
+            print("TAS: ****\(game.genre) is NOT empty, adding game")
             gamesInGenre.append(game)
+            games[game.genre] = gamesInGenre
         }
         else {
+            print("TAS: ----\(game.genre) is empty, adding \(game.name)")
             let gamesInGenre = [game]
             games[game.genre] = gamesInGenre
         }

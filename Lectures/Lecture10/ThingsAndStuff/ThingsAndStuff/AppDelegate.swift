@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let library = GameLibrary()
         let controller = window!.rootViewController as! ViewController
-        controller.library = library
+        //controller.library = library
+        controller.sections = library.getGameSections()
+        
         
         return true
     }
