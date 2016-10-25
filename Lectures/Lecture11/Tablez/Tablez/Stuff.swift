@@ -16,6 +16,33 @@ class Stuff: NSObject {
     var movies: [Movie] = []
     var books: [Book] = []
     
+    //
+    // comics
+    //
+    
+    func addComic(_ comic: Comic) -> Int? {
+        comics.append(comic)
+        return comics.index(of: comic)
+    }
+    
+    func removeComic(_ comic: Comic) {
+        if let index = comics.index(of: comic) {
+            comics.remove(at: index)
+        }
+    }
+    
+    func moveComic(_ fromIndex: Int, toIndex: Int) {
+        if fromIndex != toIndex {
+            let comic = comics[fromIndex]
+            comics.remove(at: fromIndex)
+            comics.insert(comic, at: toIndex)
+        }
+    }
+    
+    //
+    // movies
+    //
+    
     func addMovie(_ movie: Movie) -> Int? {
         movies.append(movie)
         return movies.index(of: movie)
@@ -26,6 +53,18 @@ class Stuff: NSObject {
             movies.remove(at: index)
         }
     }
+    
+    func moveMovie(_ fromIndex: Int, toIndex: Int) {
+        if fromIndex != toIndex {
+            let movie = movies[fromIndex]
+            movies.remove(at: fromIndex)
+            movies.insert(movie, at: toIndex)
+        }
+    }
+    
+    //
+    // books
+    //
     
     func addBook(_ book: Book) -> Int? {
         books.append(book)
@@ -38,14 +77,11 @@ class Stuff: NSObject {
         }
     }
     
-    func addComic(_ comic: Comic) -> Int? {
-        comics.append(comic)
-        return comics.index(of: comic)
-    }
-    
-    func removeComic(_ comic: Comic) {
-        if let index = comics.index(of: comic) {
-            comics.remove(at: index)
+    func moveBook(_ fromIndex: Int, toIndex: Int) {
+        if fromIndex != toIndex {
+            let book = books[fromIndex]
+            books.remove(at: fromIndex)
+            books.insert(book, at: toIndex)
         }
     }
     
