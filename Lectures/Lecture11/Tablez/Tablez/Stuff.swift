@@ -32,7 +32,7 @@ class Stuff: NSObject {
         return "Books"
     }
     
-    func addComic(comic: Comic) {
+    func addComic(_ comic: Comic) {
         comics.append(comic)
     }
     
@@ -84,6 +84,6 @@ class Stuff: NSObject {
         let rArtistInidex = arc4random_uniform(UInt32(artists.count))
         let rArtist = artists[Int(rArtistInidex)]
         
-        addBook(Comic(rTitle, rAuthor, rArtist))
+        addComic(Comic(rTitle, rAuthor, rArtist))
     }
 }
