@@ -66,6 +66,7 @@
 			children = (
 				600786361DB7BE12005E3062 /* AppDelegate.swift */,
 				600786381DB7BE12005E3062 /* StuffViewController.swift */,
+				605F184A1DBEEBD100EAC8D2 /* StuffCell.swift */,
 				6007863A1DB7BE12005E3062 /* Main.storyboard */,
 				6007863D1DB7BE12005E3062 /* Assets.xcassets */,
 				6007863F1DB7BE12005E3062 /* LaunchScreen.storyboard */,
@@ -74,7 +75,6 @@
 				600786481DB7BE47005E3062 /* Comic.swift */,
 				60E9E3E11DBEBA7200077071 /* Movie.swift */,
 				60E9E3E31DBEBF2C00077071 /* Stuff.swift */,
-				605F184A1DBEEBD100EAC8D2 /* StuffCell.swift */,
 			);
 			path = Tablez;
 			sourceTree = "<group>";

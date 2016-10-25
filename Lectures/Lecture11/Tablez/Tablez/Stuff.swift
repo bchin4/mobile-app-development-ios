@@ -31,7 +31,7 @@ class Stuff: NSObject {
         }
     }
     
-    func moveComic(_ fromIndex: Int, toIndex: Int) {
+    func moveComic(_ fromIndex: Int, _ toIndex: Int) {
         if fromIndex != toIndex {
             let comic = comics[fromIndex]
             comics.remove(at: fromIndex)
@@ -54,7 +54,7 @@ class Stuff: NSObject {
         }
     }
     
-    func moveMovie(_ fromIndex: Int, toIndex: Int) {
+    func moveMovie(_ fromIndex: Int, _ toIndex: Int) {
         if fromIndex != toIndex {
             let movie = movies[fromIndex]
             movies.remove(at: fromIndex)
@@ -77,7 +77,7 @@ class Stuff: NSObject {
         }
     }
     
-    func moveBook(_ fromIndex: Int, toIndex: Int) {
+    func moveBook(_ fromIndex: Int, _ toIndex: Int) {
         if fromIndex != toIndex {
             let book = books[fromIndex]
             books.remove(at: fromIndex)

@@ -142,6 +142,23 @@ class StuffViewController: UITableViewController {
         tableView.deleteRows(at: [path], with: .automatic)
     }
     
+    func moveRow(_ from: IndexPath, _ to: IndexPath) {
+        switch(from.section) {
+        case COMICS:
+            stuff.moveComic(from.row, to.row)
+        case MOVIES:
+            stuff.moveMovie(from.row, to.row)
+        case BOOKS:
+            stuff.moveBook(from.row, to.row)
+        default:
+            break
+        }
+    }
+    
+    //
+    // delgate functions; mostly call helper functions (above)
+    //
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // call the helper function
         return getSectionHeader(section)
@@ -162,6 +179,10 @@ class StuffViewController: UITableViewController {
             // call the helper function
             deleteRow(indexPath)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        moveRow(sourceIndexPath, destinationIndexPath)
     }
 }
 
