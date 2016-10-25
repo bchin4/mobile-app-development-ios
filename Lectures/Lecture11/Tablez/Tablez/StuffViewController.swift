@@ -128,18 +128,45 @@ class StuffViewController: UITableViewController {
         switch(path.section) {
         case COMICS:
             let comic = stuff.comics[path.row]
-            stuff.removeComic(comic)
+            verifyDelete(comic.title, {
+                (action) -> Void in
+                    self.stuff.removeComic(comic)
+                    self.tableView.deleteRows(at: [path], with: .automatic)
+            })
         case MOVIES:
             let movie = stuff.movies[path.row]
-            stuff.removeMovie(movie)
+            verifyDelete(movie.title, {
+                (action) -> Void in
+                self.stuff.removeMovie(movie)
+                self.tableView.deleteRows(at: [path], with: .automatic)
+            })
         case BOOKS:
             let book = stuff.books[path.row]
-            stuff.removeBook(book)
-        default:
+            verifyDelete(book.title, {
+                (action) -> Void in
+                self.stuff.removeBook(book)
+                self.tableView.deleteRows(at: [path], with: .automatic)
+            })        default:
             break
         }
+    }
+    
+    //
+    // helper function that deletes an item from the collection
+    //
+    func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
+        let title = "Delete \(name)?"
+        let message = "Are you sure that you want to delete this item?"
         
-        tableView.deleteRows(at: [path], with: .automatic)
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: delete)
+        ac.addAction(deleteAction)
+        
+        present(ac, animated: true, completion: nil)
     }
     
     func moveRow(_ from: IndexPath, _ to: IndexPath) {
