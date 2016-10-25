@@ -16,35 +16,44 @@ class Stuff: NSObject {
     var movies: [Movie] = []
     var books: [Book] = []
     
-    func addMovie(_ movie: Movie) {
+    func addMovie(_ movie: Movie) -> Int? {
         movies.append(movie)
+        return movies.index(of: movie)
     }
     
-    func getMoviesHeader() -> String {
-        return "Movies"
+    func removeMovie(_ movie: Movie) {
+        if let index = movies.index(of: movie) {
+            movies.remove(at: index)
+        }
     }
     
-    func addBook(_ book: Book) {
+    func addBook(_ book: Book) -> Int? {
         books.append(book)
+        return books.index(of: book)
     }
     
-    func getBooksHeader() -> String {
-        return "Books"
+    func removeBook(_ book: Book) {
+        if let index = books.index(of: book) {
+            books.remove(at: index)
+        }
     }
     
-    func addComic(_ comic: Comic) {
+    func addComic(_ comic: Comic) -> Int? {
         comics.append(comic)
+        return comics.index(of: comic)
     }
     
-    func getComicsHeader() -> String {
-        return "Comics"
+    func removeComic(_ comic: Comic) {
+        if let index = comics.index(of: comic) {
+            comics.remove(at: index)
+        }
     }
     
     // 
     // helper functions for making random stuff
     //
     
-    func addRandomMovie() {
+    func addRandomMovie() -> Int? {
         let titles = ["Star Wars", "Star Trek", "Cannonball Run", "Lawrence of Arabia", "The Godfather", "Jaws"]
         let years = [1952, 1965, 1977, 1985, 2005, 2014, 2016]
         
@@ -54,10 +63,10 @@ class Stuff: NSObject {
         let rYearIndex = arc4random_uniform(UInt32(years.count))
         let rYear = years[Int(rYearIndex)]
         
-        addMovie(Movie(rTitle, rYear))
+        return addMovie(Movie(rTitle, rYear))
     }
     
-    func addRandomBook() {
+    func addRandomBook() -> Int? {
         let titles = ["Insomnia", "The Name of the Wind", "Snowcrash", "War and Peace", "A Tale of Two Cities", "Moby Dick"]
         let authors = ["Stephen King", "Patrick Rothfuss", "Neal Stephenson", "Terry Pratchet", "Neil Gaiman", "Tom Clancy", "Lee Child"]
         
@@ -67,10 +76,10 @@ class Stuff: NSObject {
         let rAuthorIndex = arc4random_uniform(UInt32(authors.count))
         let rAuthor = authors[Int(rAuthorIndex)]
         
-        addBook(Book(rTitle, rAuthor))
+        return addBook(Book(rTitle, rAuthor))
     }
     
-    func addRandomComic() {
+    func addRandomComic() -> Int? {
         let titles = ["Spider-Man", "Batman", "The Avengers", "Action Comics", "Locke & Key", "Ms. Marvel"]
         let authors = ["Peter David", "Jeff Lemire", "Jason Aaron", "Chris Claremont", "Brian Michael Bendis", "Nick Spencer", "Geoff Johns"]
         let artists = ["Jim Lee", "Stuart Immonen", "David Finch", "Greg Capullo", "Frank Cho", "John Romita Jr.", "Andy Kubert"]
@@ -84,6 +93,6 @@ class Stuff: NSObject {
         let rArtistInidex = arc4random_uniform(UInt32(artists.count))
         let rArtist = artists[Int(rArtistInidex)]
         
-        addComic(Comic(rTitle, rAuthor, rArtist))
+        return addComic(Comic(rTitle, rAuthor, rArtist))
     }
 }

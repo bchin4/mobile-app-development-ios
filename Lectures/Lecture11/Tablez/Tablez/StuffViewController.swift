@@ -29,26 +29,46 @@ class StuffViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
         
-        //init the collection with some random stuff
         stuff = Stuff()
-        for _ in 0..<15 {
-            stuff.addRandomComic()
-        }
-        
-        for _ in 0..<5 {
-            stuff.addRandomMovie()
-        }
-        
-        for _ in 0..<10 {
-            stuff.addRandomBook()
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func toggleEditMode(_ sender: UIButton) {
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        }
+        else {
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
+    }
+    
+    @IBAction func addComic(_ sender: AnyObject) {
+        if let index = stuff.addRandomComic() {
+            let indexPath = NSIndexPath(row: index, section: COMICS)
+            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+        }
+    }
+    
+    @IBAction func addMovie(_ sender: AnyObject) {
+        if let index = stuff.addRandomMovie() {
+            let indexPath = NSIndexPath(row: index, section: MOVIES)
+            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+        }
+    }
+    
+    @IBAction func addBook(_ sender: AnyObject) {
+        if let index = stuff.addRandomBook() {
+            let indexPath = NSIndexPath(row: index, section: BOOKS)
+            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -56,11 +76,11 @@ class StuffViewController: UITableViewController {
     func getSectionHeader(_ sectionNumber: Int) -> String? {
         switch sectionNumber {
         case COMICS:
-            return stuff.getComicsHeader()
+            return "Comics"
         case MOVIES:
-            return stuff.getMoviesHeader()
+            return "Movies"
         case BOOKS:
-            return stuff.getBooksHeader()
+            return "Books"
         default:
             return nil
         }
@@ -96,11 +116,30 @@ class StuffViewController: UITableViewController {
             let book = stuff.books[path.row]
             cell.title?.text = book.title
             cell.detail1?.text = "\(book.author)"
+            cell.detail2?.text = ""
         default:
             cell.title?.text = "Unknown"
         }
         
         return cell
+    }
+    
+    func deleteRow(_ path: IndexPath) {
+        switch(path.section) {
+        case COMICS:
+            let comic = stuff.comics[path.row]
+            stuff.removeComic(comic)
+        case MOVIES:
+            let movie = stuff.movies[path.row]
+            stuff.removeMovie(movie)
+        case BOOKS:
+            let book = stuff.books[path.row]
+            stuff.removeBook(book)
+        default:
+            break
+        }
+        
+        tableView.deleteRows(at: [path], with: .automatic)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -116,6 +155,13 @@ class StuffViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // call the helper function
         return getTableCell(indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // call the helper function
+            deleteRow(indexPath)
+        }
     }
 }
 

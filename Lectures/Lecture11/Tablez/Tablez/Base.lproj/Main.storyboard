@@ -15,9 +15,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="adZ-EY-kOK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92X-L5-yHw">
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="toggleEditMode:" destination="iXh-29-ESk" eventType="touchUpInside" id="AAb-ap-BS1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjW-6j-APd">
+                                    <state key="normal" title="+Movie"/>
+                                    <connections>
+                                        <action selector="addMovie:" destination="iXh-29-ESk" eventType="touchUpInside" id="HbF-Wl-fpM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEK-jj-hff">
+                                    <state key="normal" title="+Comic"/>
+                                    <connections>
+                                        <action selector="addComic:" destination="iXh-29-ESk" eventType="touchUpInside" id="pSV-Fg-1Lr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLs-sD-JCa">
+                                    <state key="normal" title="+Book"/>
+                                    <connections>
+                                        <action selector="addBook:" destination="iXh-29-ESk" eventType="touchUpInside" id="M4j-fz-ygU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="oEK-jj-hff" firstAttribute="width" secondItem="92X-L5-yHw" secondAttribute="width" id="70T-w6-PPU"/>
+                                <constraint firstItem="92X-L5-yHw" firstAttribute="centerY" secondItem="adZ-EY-kOK" secondAttribute="centerY" id="Px2-aW-898"/>
+                                <constraint firstItem="iLs-sD-JCa" firstAttribute="leading" secondItem="pjW-6j-APd" secondAttribute="trailing" constant="8" id="Uwv-LD-9uc"/>
+                                <constraint firstItem="92X-L5-yHw" firstAttribute="leading" secondItem="adZ-EY-kOK" secondAttribute="leading" constant="8" id="blL-GD-uHT"/>
+                                <constraint firstItem="pjW-6j-APd" firstAttribute="leading" secondItem="oEK-jj-hff" secondAttribute="trailing" constant="8" id="cS7-sd-OfB"/>
+                                <constraint firstItem="oEK-jj-hff" firstAttribute="centerY" secondItem="adZ-EY-kOK" secondAttribute="centerY" id="g8T-J1-h9F"/>
+                                <constraint firstAttribute="trailing" secondItem="iLs-sD-JCa" secondAttribute="trailing" constant="8" id="jDv-Kv-S2T"/>
+                                <constraint firstItem="iLs-sD-JCa" firstAttribute="centerY" secondItem="adZ-EY-kOK" secondAttribute="centerY" id="rHd-yy-VZy"/>
+                                <constraint firstItem="iLs-sD-JCa" firstAttribute="width" secondItem="92X-L5-yHw" secondAttribute="width" id="spF-Pe-rPi"/>
+                                <constraint firstItem="pjW-6j-APd" firstAttribute="centerY" secondItem="adZ-EY-kOK" secondAttribute="centerY" id="vJQ-6A-RV4"/>
+                                <constraint firstItem="pjW-6j-APd" firstAttribute="width" secondItem="92X-L5-yHw" secondAttribute="width" id="xMD-Cv-815"/>
+                                <constraint firstItem="oEK-jj-hff" firstAttribute="leading" secondItem="92X-L5-yHw" secondAttribute="trailing" constant="8" id="yXc-TJ-rA6"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StuffCell" rowHeight="65" id="x9L-EK-VBM" customClass="StuffCell" customModule="Tablez" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x9L-EK-VBM" id="blf-Zh-ZEq">
                                     <frame key="frameInset" width="375" height="64"/>
@@ -28,12 +73,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jW-Rk-XM6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jW-Rk-XM6">
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejZ-vM-CLX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejZ-vM-CLX">
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
