@@ -97,7 +97,7 @@ aBlankString.isEmpty        // is not empty
 
 // mutation
 var mutableString = "abc"
-mutableString.appendContentsOf("def")  // in place mutation of the string
+mutableString.append("def")  // in place mutation of the string
 print(mutableString)
 
 let immutableString = "123"
@@ -143,7 +143,7 @@ var aSourceArray = [10, 20, 30]
 let aCopyArray = aSourceArray
 
 aSourceArray.append(42)
-aSourceArray.removeAtIndex(1)
+aSourceArray.remove(at: 1)
 
 print(aSourceArray)
 print(aCopyArray)
@@ -252,7 +252,7 @@ else {
 var optionalTom: Float?
 var optionalLarry: Float?
 if let tom = optionalTom,         // here is an if/let example with more than one optional
-    larry = optionalLarry {       //    separated by commas
+    let larry = optionalLarry {       //    separated by commas
     total = tom + larry
 }
 else {
@@ -309,7 +309,7 @@ for anInt in arrayForLoops {  // this for-in is similar to a Java-style for-each
 }
 print(totalOfAnInts)
 
-for (i, aString) in arrayForLoops.enumerate() { // this for-in uses enumerate, which returns a 
+for (i, aString) in arrayForLoops.enumerated() { // this for-in uses enumerate, which returns a 
                                                 //    series of tuples.  Not used in iOS
     var interpolated = "index: \(i), value: \(aString)"
 }
