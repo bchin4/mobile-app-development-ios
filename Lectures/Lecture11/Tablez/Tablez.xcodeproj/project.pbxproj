@@ -13,6 +13,7 @@
 		6007863E1DB7BE12005E3062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6007863D1DB7BE12005E3062 /* Assets.xcassets */; };
 		600786411DB7BE12005E3062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6007863F1DB7BE12005E3062 /* LaunchScreen.storyboard */; };
 		600786491DB7BE47005E3062 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600786481DB7BE47005E3062 /* Comic.swift */; };
+		605F184B1DBEEBD100EAC8D2 /* StuffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F184A1DBEEBD100EAC8D2 /* StuffCell.swift */; };
 		60E9E3E01DBEB97200077071 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9E3DF1DBEB97200077071 /* Book.swift */; };
 		60E9E3E21DBEBA7200077071 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9E3E11DBEBA7200077071 /* Movie.swift */; };
 		60E9E3E41DBEBF2C00077071 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9E3E31DBEBF2C00077071 /* Stuff.swift */; };
@@ -27,6 +28,7 @@
 		600786401DB7BE12005E3062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		600786421DB7BE12005E3062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		600786481DB7BE47005E3062 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		605F184A1DBEEBD100EAC8D2 /* StuffCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StuffCell.swift; sourceTree = "<group>"; };
 		60E9E3DF1DBEB97200077071 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		60E9E3E11DBEBA7200077071 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		60E9E3E31DBEBF2C00077071 /* Stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				600786481DB7BE47005E3062 /* Comic.swift */,
 				60E9E3E11DBEBA7200077071 /* Movie.swift */,
 				60E9E3E31DBEBF2C00077071 /* Stuff.swift */,
+				605F184A1DBEEBD100EAC8D2 /* StuffCell.swift */,
 			);
 			path = Tablez;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				600786391DB7BE12005E3062 /* StuffViewController.swift in Sources */,
 				600786371DB7BE12005E3062 /* AppDelegate.swift in Sources */,
 				60E9E3E41DBEBF2C00077071 /* Stuff.swift in Sources */,
+				605F184B1DBEEBD100EAC8D2 /* StuffCell.swift in Sources */,
 				600786491DB7BE47005E3062 /* Comic.swift in Sources */,
 				60E9E3E21DBEBA7200077071 /* Movie.swift in Sources */,
 			);

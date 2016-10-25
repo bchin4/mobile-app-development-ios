@@ -26,6 +26,9 @@ class StuffViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+        
         //init the collection with some random stuff
         stuff = Stuff()
         for _ in 0..<15 {
@@ -77,23 +80,24 @@ class StuffViewController: UITableViewController {
     }
     
     func getTableCell(_ path: IndexPath ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StuffCell", for: path)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StuffCell", for: path) as! StuffCell
         
         switch(path.section) {
         case COMICS:
             let comic = stuff.comics[path.row]
-            cell.textLabel?.text = comic.title
-            cell.detailTextLabel?.text = "(\(comic.author), \(comic.artist))"
+            cell.title?.text = comic.title
+            cell.detail1?.text = "\(comic.author)"
+            cell.detail2?.text = "\(comic.artist)"
         case MOVIES:
             let movie = stuff.movies[path.row]
-            cell.textLabel?.text = movie.title
-            cell.detailTextLabel?.text = "\(movie.releaseYear)"
+            cell.title?.text = movie.title
+            cell.detail1?.text = "\(movie.releaseYear)"
         case BOOKS:
             let book = stuff.books[path.row]
-            cell.textLabel?.text = book.title
-            cell.detailTextLabel?.text = "\(book.author)"
+            cell.title?.text = book.title
+            cell.detail1?.text = "\(book.author)"
         default:
-            cell.textLabel?.text = "Unknown"
+            cell.title?.text = "Unknown"
         }
         
         return cell
@@ -105,13 +109,13 @@ class StuffViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // call the helper function
         return getNumberOfRowsInSection(section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // call the helper function
         return getTableCell(indexPath)
     }
-    
-
 }
 
