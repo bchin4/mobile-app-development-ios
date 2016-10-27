@@ -20,9 +20,9 @@ class Stuff: NSObject {
     // comics
     //
     
-    func addComic(_ comic: Comic) -> Int? {
+    func addComic(_ comic: Comic) -> Int {
         comics.append(comic)
-        return comics.index(of: comic)
+        return comics.index(of: comic)!
     }
     
     func removeComic(_ comic: Comic) {
@@ -43,9 +43,9 @@ class Stuff: NSObject {
     // movies
     //
     
-    func addMovie(_ movie: Movie) -> Int? {
+    func addMovie(_ movie: Movie) -> Int {
         movies.append(movie)
-        return movies.index(of: movie)
+        return movies.index(of: movie)!
     }
     
     func removeMovie(_ movie: Movie) {
@@ -66,9 +66,9 @@ class Stuff: NSObject {
     // books
     //
     
-    func addBook(_ book: Book) -> Int? {
+    func addBook(_ book: Book) -> Int {
         books.append(book)
-        return books.index(of: book)
+        return books.index(of: book)!
     }
     
     func removeBook(_ book: Book) {

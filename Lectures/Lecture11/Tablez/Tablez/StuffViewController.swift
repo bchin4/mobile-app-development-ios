@@ -102,6 +102,8 @@ class StuffViewController: UITableViewController {
     func getTableCell(_ path: IndexPath ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StuffCell", for: path) as! StuffCell
         
+        cell.updateLabels()
+        
         switch(path.section) {
         case COMICS:
             let comic = stuff.comics[path.row]
