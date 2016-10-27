@@ -117,7 +117,7 @@ class StuffViewController: UITableViewController {
             let movie = stuff.movies[path.row]
             cell.title?.text = movie.title
             cell.detail1?.text = "\(movie.releaseYear)"
-            cell.detail2?text = ""
+            cell.detail2?.text = ""
         case BOOKS:
             let book = stuff.books[path.row]
             cell.title?.text = book.title
