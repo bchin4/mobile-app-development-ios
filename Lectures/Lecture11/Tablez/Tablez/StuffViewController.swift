@@ -29,6 +29,9 @@ class StuffViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
         
+        //tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        //tableView.estimatedSectionHeaderHeight = 100
+        
         stuff = Stuff()
     }
 
@@ -38,13 +41,13 @@ class StuffViewController: UITableViewController {
     }
     
     @IBAction func toggleEditMode(_ sender: UIButton) {
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
+        if isEditing == false {
+            setEditing(true, animated: true)
+            sender.setTitle("Done", for: .normal)
         }
         else {
-            sender.setTitle("Done", for: .normal)
-            setEditing(true, animated: true)
+            setEditing(false, animated: true)
+            sender.setTitle("Edit", for: .normal)
         }
     }
     
@@ -114,6 +117,7 @@ class StuffViewController: UITableViewController {
             let movie = stuff.movies[path.row]
             cell.title?.text = movie.title
             cell.detail1?.text = "\(movie.releaseYear)"
+            cell.detail2?text = ""
         case BOOKS:
             let book = stuff.books[path.row]
             cell.title?.text = book.title
@@ -213,5 +217,13 @@ class StuffViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         moveRow(sourceIndexPath, destinationIndexPath)
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        
+//        
+//        let header = view as! UITableViewHeaderFooterView
+//        let headerFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+//        header.textLabel!.font = headerFont
+//    }
 }
 
