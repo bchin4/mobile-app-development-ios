@@ -12,6 +12,7 @@
 		60EE53821DC8C5E100EF152B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EE53801DC8C5E100EF152B /* Main.storyboard */; };
 		60EE53841DC8C5E100EF152B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60EE53831DC8C5E100EF152B /* Assets.xcassets */; };
 		60EE53871DC8C5E100EF152B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EE53851DC8C5E100EF152B /* LaunchScreen.storyboard */; };
+		60EE538F1DC8CDE900EF152B /* ButtonChangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE538E1DC8CDE900EF152B /* ButtonChangerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		60EE53831DC8C5E100EF152B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60EE53861DC8C5E100EF152B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60EE53881DC8C5E100EF152B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60EE538E1DC8CDE900EF152B /* ButtonChangerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonChangerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				60EE53831DC8C5E100EF152B /* Assets.xcassets */,
 				60EE53851DC8C5E100EF152B /* LaunchScreen.storyboard */,
 				60EE53881DC8C5E100EF152B /* Info.plist */,
+				60EE538E1DC8CDE900EF152B /* ButtonChangerViewController.swift */,
 			);
 			path = ThisAndThat;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EE538F1DC8CDE900EF152B /* ButtonChangerViewController.swift in Sources */,
 				60EE537F1DC8C5E100EF152B /* ViewController.swift in Sources */,
 				60EE537D1DC8C5E100EF152B /* AppDelegate.swift in Sources */,
 			);

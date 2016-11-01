@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var thingButton: UIButton!
+    @IBOutlet var countLabel: UILabel!
+    
+    var count: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        countLabel.text = count.description
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +26,21 @@ class ViewController: UIViewController {
     }
 
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // make sure it's the right seque (there may be
+        // more than one)
+        if segue.identifier == "EditButton" {
+            // cast the next view controller into a 
+            // button changer
+            let buttonChanger = segue.destination as! ButtonChangerViewController
+            // set its button property
+            buttonChanger.theButton = thingButton
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        count = count + 1
+        countLabel.text = count.description
+    }
 }
 
