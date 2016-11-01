@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var thingButton: UIButton!
     @IBOutlet var countLabel: UILabel!
     
-    var count: Int = 0
+    var count: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,14 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         count = count + 1
         countLabel.text = count.description
+        
+        print("main view controller is appearing")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("main view controller is disappearing")
     }
 }
 

@@ -12,16 +12,25 @@ class ButtonChangerViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var buttonNameField: UITextField!
     
-    var theButton: UIButton!
+    var theButton: UIButton! {
+        didSet {
+            let title = theButton.title(for: .normal)!
+            navigationItem.title = "Change \"" + title + "\""
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print("button changer is appearing")
         
         buttonNameField.text = theButton.title(for: .normal)        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
+        print("button changer is disappearing")
         
         view.endEditing(true)
         
