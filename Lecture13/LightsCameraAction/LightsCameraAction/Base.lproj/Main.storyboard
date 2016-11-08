@@ -35,7 +35,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-LB-5EK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snap" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-LB-5EK">
                                 <rect key="frame" x="16" y="20" width="343" height="603"/>
                             </imageView>
                         </subviews>
@@ -58,4 +58,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="snap" width="16" height="16"/>
+    </resources>
 </document>

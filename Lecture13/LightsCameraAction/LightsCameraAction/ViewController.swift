@@ -9,11 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    // MARK: - outlets
+    
     @IBOutlet var imageView: UIImageView!
 
+    // MARK: - lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +27,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - actions
+    
     @IBAction func takePhoto(_ sender: Any) {
         let picker = UIImagePickerController()
         
@@ -37,6 +45,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         present(picker, animated: true, completion: nil)
     }
+    
+    // MARK: - image picker delegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
