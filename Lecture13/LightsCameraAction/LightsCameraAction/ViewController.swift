@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func takePhoto(_ sender: Any) {
+        let picker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            print("camera selected")
+        }
+        else {
+            picker.sourceType = .photoLibrary
+            print("photo library selected")
+        }
+    
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        imageView.image = photo
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
 
