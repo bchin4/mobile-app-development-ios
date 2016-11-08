@@ -28,6 +28,8 @@
 	<string>I need to choose a photo from your library!</string>
 	<key>NSCameraUsageDescription</key>
 	<string>I need the camera!</string>
+	<key>CFBundleDisplayName</key>
+	<string>Lights!</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
