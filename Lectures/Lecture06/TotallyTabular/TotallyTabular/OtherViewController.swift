@@ -21,12 +21,12 @@ class OtherViewController: UIViewController {
         print("OtherViewController viewDidLoad() called")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("OtherViewController viewWillAppear() called")
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("OtherViewController viewDidAppear() called")
     }
