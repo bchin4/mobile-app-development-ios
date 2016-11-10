@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
     var thingee: Thingee!
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var stringField: UITextField!
+    @IBOutlet var numberField: UITextField!
+    @IBOutlet var booleanField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // set image view
             imageView.image = img
         }
+        
+        stringField.text = thingee.aString
+        numberField.text = Int(thingee.aNumber).description
+        booleanField.text = Bool(thingee.aBoolean).description
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,6 +48,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         picker.delegate = self
     
         present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func stringChanged(_ sender: Any) {
+        if let aString = stringField.text {
+            thingee.aString = aString
+        }
+    }
+    
+    @IBAction func numberChanged(_ sender: Any) {
+        if let aString = numberField.text,
+            let aNumber = Int(aString) {
+            thingee.aNumber = aNumber
+        }
+    }
+    
+    @IBAction func booleanChanged(_ sender: Any) {
+        if let aString = booleanField.text {
+            thingee.aBoolean = NSString(string: aString).boolValue
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

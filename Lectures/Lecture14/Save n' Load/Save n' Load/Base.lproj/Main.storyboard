@@ -52,6 +52,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="stringChanged:" destination="LNR-x8-clL" eventType="editingChanged" id="NgV-IK-y4V"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -69,6 +72,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="numberChanged:" destination="LNR-x8-clL" eventType="editingChanged" id="qE1-7S-Sni"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -86,6 +92,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="booleanChanged:" destination="LNR-x8-clL" eventType="editingChanged" id="pco-Ej-xez"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -111,7 +120,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="booleanField" destination="7RW-E7-4Uj" id="OwI-dK-fsl"/>
                         <outlet property="imageView" destination="b5Z-87-iAE" id="3Lh-LA-0Jh"/>
+                        <outlet property="numberField" destination="69o-67-WXC" id="NmE-4Z-16M"/>
+                        <outlet property="stringField" destination="2Xe-bh-f3y" id="pgB-mB-bN4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAd-wf-9se" userLabel="First Responder" sceneMemberID="firstResponder"/>
