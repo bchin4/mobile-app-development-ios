@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6024BCAD1DD4158700DF4B02 /* ThingeePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6024BCAC1DD4158700DF4B02 /* ThingeePersister.swift */; };
 		60AF84261DD400AB0071E1A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF84251DD400AB0071E1A0 /* AppDelegate.swift */; };
 		60AF84281DD400AB0071E1A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF84271DD400AB0071E1A0 /* ViewController.swift */; };
 		60AF842B1DD400AB0071E1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60AF84291DD400AB0071E1A0 /* Main.storyboard */; };
 		60AF842D1DD400AB0071E1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AF842C1DD400AB0071E1A0 /* Assets.xcassets */; };
 		60AF84301DD400AB0071E1A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60AF842E1DD400AB0071E1A0 /* LaunchScreen.storyboard */; };
+		60AF84381DD400F90071E1A0 /* Thingee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF84371DD400F90071E1A0 /* Thingee.swift */; };
+		60AF843A1DD4025F0071E1A0 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF84391DD4025F0071E1A0 /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6024BCAC1DD4158700DF4B02 /* ThingeePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingeePersister.swift; sourceTree = "<group>"; };
 		60AF84221DD400AB0071E1A0 /* Save n' Load.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save n' Load.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AF84251DD400AB0071E1A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60AF84271DD400AB0071E1A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		60AF842C1DD400AB0071E1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60AF842F1DD400AB0071E1A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60AF84311DD400AB0071E1A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60AF84371DD400F90071E1A0 /* Thingee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thingee.swift; sourceTree = "<group>"; };
+		60AF84391DD4025F0071E1A0 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				60AF842C1DD400AB0071E1A0 /* Assets.xcassets */,
 				60AF842E1DD400AB0071E1A0 /* LaunchScreen.storyboard */,
 				60AF84311DD400AB0071E1A0 /* Info.plist */,
+				60AF84371DD400F90071E1A0 /* Thingee.swift */,
+				60AF84391DD4025F0071E1A0 /* ImageHelper.swift */,
+				6024BCAC1DD4158700DF4B02 /* ThingeePersister.swift */,
 			);
 			path = "Save n' Load";
 			sourceTree = "<group>";
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60AF84381DD400F90071E1A0 /* Thingee.swift in Sources */,
 				60AF84281DD400AB0071E1A0 /* ViewController.swift in Sources */,
+				60AF843A1DD4025F0071E1A0 /* ImageHelper.swift in Sources */,
+				6024BCAD1DD4158700DF4B02 /* ThingeePersister.swift in Sources */,
 				60AF84261DD400AB0071E1A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +312,7 @@
 				60AF84361DD400AB0071E1A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
