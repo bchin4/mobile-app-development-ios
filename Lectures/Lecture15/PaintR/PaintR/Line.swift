@@ -12,7 +12,7 @@ import UIKit
 
 class Line: DrawingTool {
     init(start: CGPoint, color: UIColor) {
-        super.init(start: start, color: color, brushSize: 0.5 )
+        super.init(start: start, color: color, brushSize: 5.0 )
     }
     
     override func draw(on: UIView) {

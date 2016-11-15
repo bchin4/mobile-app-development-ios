@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +18,108 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Surface" customModule="PaintR" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-Th-0Pe">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FRQ-sr-fWL"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Line" id="c74-Nf-kDt">
+                                        <connections>
+                                            <action selector="setDrawingToolToLine:" destination="BYZ-38-t0r" id="BOL-fx-Cho"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Squiggle" id="Sgp-BX-jgX">
+                                        <connections>
+                                            <action selector="setDrawingToolToSquiggle:" destination="BYZ-38-t0r" id="QLV-HN-P3l"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Circle" id="VNV-bb-YLu">
+                                        <connections>
+                                            <action selector="setDrawingToolToCircle:" destination="BYZ-38-t0r" id="E2z-fm-1xT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-ha-uGS" customClass="Surface" customModule="PaintR" customModuleProvider="target">
+                                <rect key="frame" x="16" y="64" width="343" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNe-ah-UnK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2xZ-f0-Agb"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="R" id="zr1-0C-p5f">
+                                        <color key="tintColor" red="0.8827586207" green="0.072413793099999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="setColorToRed:" destination="BYZ-38-t0r" id="RdF-am-0Zo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Y" id="Fq9-GE-Zbv">
+                                        <color key="tintColor" red="0.78453663793103445" green="0.80293642241379315" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="setColorToYellow:" destination="BYZ-38-t0r" id="Q7c-Ye-y3h"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="G" id="VCP-kS-17I">
+                                        <color key="tintColor" red="0.0" green="0.91379310339999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="setColorToGreen:" destination="BYZ-38-t0r" id="2TC-fn-yLp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="P" id="cJB-Xx-i7D">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.67691271551724141" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="setColorToPurple:" destination="BYZ-38-t0r" id="bKh-k2-ukU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Bl" id="zah-sa-dIO">
+                                        <connections>
+                                            <action selector="setColorToBlue:" destination="BYZ-38-t0r" id="Exv-yW-k6c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Bk" id="iSD-Kb-sM9">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="setColorToBlack:" destination="BYZ-38-t0r" id="hoJ-Z5-MU1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="W" id="GeO-Tm-OEM">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="setColorToWhite:" destination="BYZ-38-t0r" id="rEY-ge-1fg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mdm-Th-0Pe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0XW-Fh-EbG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lu5-ha-uGS" secondAttribute="trailing" id="CFX-Ra-mAY"/>
+                            <constraint firstItem="lu5-ha-uGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dub-uN-dux"/>
+                            <constraint firstItem="mdm-Th-0Pe" firstAttribute="top" secondItem="lu5-ha-uGS" secondAttribute="bottom" id="FZX-Ic-rIM"/>
+                            <constraint firstAttribute="trailing" secondItem="xNe-ah-UnK" secondAttribute="trailing" id="Vqz-pk-41P"/>
+                            <constraint firstItem="lu5-ha-uGS" firstAttribute="top" secondItem="xNe-ah-UnK" secondAttribute="bottom" id="VyF-Bi-lPM"/>
+                            <constraint firstAttribute="trailing" secondItem="mdm-Th-0Pe" secondAttribute="trailing" id="Xhp-h0-rOt"/>
+                            <constraint firstItem="xNe-ah-UnK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hmR-Iq-CYa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mdm-Th-0Pe" secondAttribute="bottom" id="pA6-V2-J2N"/>
+                            <constraint firstItem="xNe-ah-UnK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uch-Xg-LNw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="surface" destination="lu5-ha-uGS" id="cP8-iA-n0d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="60.719640179910051"/>
         </scene>
     </scenes>
 </document>

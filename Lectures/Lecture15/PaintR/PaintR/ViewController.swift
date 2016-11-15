@@ -10,16 +10,65 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var surface: Surface!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        surface.setCurrentDrawingTool(drawingTool: .LINE)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: chnge drawing tool
 
+    @IBAction func setDrawingToolToLine(_ sender: Any) {
+        surface.setCurrentDrawingTool(drawingTool: .LINE)
+    }
+    
+    @IBAction func setDrawingToolToSquiggle(_ sender: Any) {
+        
+        surface.setCurrentDrawingTool(drawingTool: .SQUIGGLE)
+    }
 
+    @IBAction func setDrawingToolToCircle(_ sender: Any) {
+        // causes huge performance issues.  commenting out until
+        // I get it sorted.
+        //surface.setCurrentDrawingTool(drawingTool: .CIRCLE)
+    }
+    
+    // MARK: change color tools
+    
+    @IBAction func setColorToRed(_ sender: Any) {
+        surface.paintColor = UIColor.red
+    }
+    
+    @IBAction func setColorToYellow(_ sender: Any) {
+        surface.paintColor = UIColor.yellow
+    }
+    
+    @IBAction func setColorToGreen(_ sender: Any) {
+        surface.paintColor = UIColor.green
+    }
+    
+    @IBAction func setColorToPurple(_ sender: Any) {
+        surface.paintColor = UIColor.purple
+    }
+    
+    @IBAction func setColorToBlue(_ sender: Any) {
+        surface.paintColor = UIColor.blue
+    }
+    
+    @IBAction func setColorToBlack(_ sender: Any) {
+        surface.paintColor = UIColor.black
+    }
+    @IBAction func setColorToWhite(_ sender: Any) {
+        surface.paintColor = UIColor.white
+    }
 }
 
