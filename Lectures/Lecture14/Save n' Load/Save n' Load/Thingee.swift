@@ -9,10 +9,10 @@
 import UIKit
 
 class Thingee: NSObject, NSCoding {
-    let aStringKey = "aString"
-    let aNumberKey = "aNumber"
-    let aBooleanKey = "aBoolean"
-    let aUniqueIDKey = "aUniqueID"
+    static let aStringKey = "aString"
+    static let aNumberKey = "aNumber"
+    static let aBooleanKey = "aBoolean"
+    static let aUniqueIDKey = "aUniqueID"
     
     var aString: String
     var aNumber: Int
@@ -28,18 +28,18 @@ class Thingee: NSObject, NSCoding {
     
     // decodes (deserializes) a Thingee
     required init(coder aDecoder: NSCoder) {
-        aString = aDecoder.decodeObject(forKey: aStringKey) as! String
-        aNumber = aDecoder.decodeInteger(forKey: aNumberKey)
-        aBoolean = aDecoder.decodeBool(forKey: aBooleanKey)
-        aUniqueID = aDecoder.decodeObject(forKey: aUniqueIDKey) as! String
+        aString = aDecoder.decodeObject(forKey: Thingee.aStringKey) as! String
+        aNumber = aDecoder.decodeInteger(forKey: Thingee.aNumberKey)
+        aBoolean = aDecoder.decodeBool(forKey: Thingee.aBooleanKey)
+        aUniqueID = aDecoder.decodeObject(forKey: Thingee.aUniqueIDKey) as! String
     }
     
     // encodes (serializes) a Thingee
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(aString, forKey: aStringKey)
-        aCoder.encode(aNumber, forKey: aNumberKey)
-        aCoder.encode(aBoolean, forKey: aBooleanKey)
-        aCoder.encode(aUniqueID, forKey: aUniqueIDKey)
+        aCoder.encode(aString, forKey: Thingee.aStringKey)
+        aCoder.encode(aNumber, forKey: Thingee.aNumberKey)
+        aCoder.encode(aBoolean, forKey: Thingee.aBooleanKey)
+        aCoder.encode(aUniqueID, forKey: Thingee.aUniqueIDKey)
     }
     
     
