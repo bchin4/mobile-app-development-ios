@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @IBAction func setDrawingToolToCircle(_ sender: Any) {
         // causes huge performance issues.  commenting out until
         // I get it sorted.
-        //surface.setCurrentDrawingTool(drawingTool: .CIRCLE)
+        surface.setCurrentDrawingTool(drawingTool: .CIRCLE)
     }
     
     // MARK: change color tools

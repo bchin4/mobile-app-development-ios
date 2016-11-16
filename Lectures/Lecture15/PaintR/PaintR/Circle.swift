@@ -11,6 +11,8 @@ import CoreGraphics
 import UIKit
 
 class Circle: DrawingTool {
+    var shapeLayer: CAShapeLayer!
+    
     init(start: CGPoint, color: UIColor) {
         super.init(start: start, color: color, brushSize: 0.0)
     }
@@ -24,7 +26,13 @@ class Circle: DrawingTool {
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
         
-        let shapeLayer = CAShapeLayer()
+        if let shape = shapeLayer,
+           let layers = view.layer.sublayers,
+           let index = layers.index(of: shape) {
+            view.layer.sublayers?.remove(at: index)
+        }
+        
+        shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.cgPath
         
         shapeLayer.fillColor = color.cgColor
