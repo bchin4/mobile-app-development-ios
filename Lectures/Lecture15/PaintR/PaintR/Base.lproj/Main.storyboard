@@ -43,6 +43,11 @@
                                             <action selector="setDrawingToolToCircle:" destination="BYZ-38-t0r" id="E2z-fm-1xT"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Erase" id="QQV-yG-U4C">
+                                        <connections>
+                                            <action selector="eraseSurface:" destination="BYZ-38-t0r" id="OnP-B6-rDr"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" restorationIdentifier="UIView" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-ha-uGS" customClass="Surface" customModule="PaintR" customModuleProvider="target">

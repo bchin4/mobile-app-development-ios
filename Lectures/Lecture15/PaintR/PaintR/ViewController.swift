@@ -42,6 +42,10 @@ class ViewController: UIViewController {
         surface.setCurrentDrawingTool(drawingTool: .CIRCLE)
     }
     
+    @IBAction func eraseSurface(_ sender: Any) {
+        surface.erase()
+    }
+    
     // MARK: change color tools
     
     @IBAction func setColorToRed(_ sender: Any) {

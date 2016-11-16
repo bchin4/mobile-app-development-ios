@@ -51,4 +51,9 @@ class Surface: UIView {
             drawingTool.draw(on: self)
         }
     }
+    
+    func erase() {
+        drawingTools.removeAll()
+        setNeedsDisplay()
+    }
 }
