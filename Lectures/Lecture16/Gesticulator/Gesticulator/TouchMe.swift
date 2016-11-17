@@ -77,6 +77,24 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
     func tap(_ recognizer: UIGestureRecognizer) {
         print("tapped!")
         notifyGestureListeners(type: "Tap", recognizer: recognizer)
+        
+        let location = recognizer.location(in: self)
+        
+        let menu = UIMenuController.shared
+        
+        becomeFirstResponder()
+        
+        let redItem = UIMenuItem(title: "Red",
+                                 action: #selector(TouchMe.setBackgroundColorToRed(_:)))
+        let greenItem = UIMenuItem(title: "Green",
+                                   action: #selector(TouchMe.setBackgroundColorToGreen(_:)))
+        let blueItem = UIMenuItem(title: "Blue",
+                                  action: #selector(TouchMe.setBackgroundColorToBlue(_:)))
+        let grayItem = UIMenuItem(title: "Gray",
+                                  action: #selector(TouchMe.setBackgroundColorToGray(_:)))
+        menu.menuItems = [redItem, greenItem, blueItem, grayItem]
+        menu.setTargetRect(CGRect(x: location.x, y: location.y, width: 2, height: 2), in: self)
+        menu.setMenuVisible(true, animated: true)
     }
     
     func doubleTap(_ recognizer: UIGestureRecognizer) {
@@ -97,24 +115,6 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
     func tripleTap(_ recognizer: UIPanGestureRecognizer) {
         print("triple tap!")
         notifyGestureListeners(type: "Triple Tap!", recognizer: recognizer)
-        
-        let location = recognizer.location(in: self)
-        
-        let menu = UIMenuController.shared
-        
-        becomeFirstResponder()
-        
-        let redItem = UIMenuItem(title: "Red",
-                                 action: #selector(TouchMe.setBackgroundColorToRed(_:)))
-        let greenItem = UIMenuItem(title: "Green",
-                                   action: #selector(TouchMe.setBackgroundColorToGreen(_:)))
-        let blueItem = UIMenuItem(title: "Blue",
-                                  action: #selector(TouchMe.setBackgroundColorToBlue(_:)))
-        let grayItem = UIMenuItem(title: "Gray",
-                                  action: #selector(TouchMe.setBackgroundColorToGray(_:)))
-        menu.menuItems = [redItem, greenItem, blueItem, grayItem]
-        menu.setTargetRect(CGRect(x: location.x, y: location.y, width: 2, height: 2), in: self)
-        menu.setMenuVisible(true, animated: true)
     }
     
     // MARK: gesture recognizer delegate methods
