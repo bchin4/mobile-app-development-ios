@@ -45,7 +45,6 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(TouchMe.pan(_:)))
         pan.delegate = self
         addGestureRecognizer(pan)
-        
     }
     
     
