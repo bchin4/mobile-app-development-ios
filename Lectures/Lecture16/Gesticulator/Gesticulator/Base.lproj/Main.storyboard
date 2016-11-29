@@ -154,7 +154,7 @@
                         <outlet property="gestureRelativePositionVertical" destination="Shb-F8-E1Z" id="gHa-Wk-b0Y"/>
                         <outlet property="gestureState" destination="phu-ig-ixY" id="B0u-ui-Ysb"/>
                         <outlet property="gestureType" destination="M0Q-b5-fiw" id="1WC-SP-aOb"/>
-                        <outlet property="touchMe" destination="uJl-1Z-fnt" id="KwD-HX-yNN"/>
+                        <outlet property="touchMe" destination="uJl-1Z-fnt" id="Oil-Pc-KwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
