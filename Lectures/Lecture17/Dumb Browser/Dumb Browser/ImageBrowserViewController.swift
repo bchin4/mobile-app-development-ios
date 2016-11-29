@@ -19,6 +19,8 @@ class ImageBrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.layer.masksToBounds = true
+        
         imageFetcher = ImageFetcher()
     }
     
