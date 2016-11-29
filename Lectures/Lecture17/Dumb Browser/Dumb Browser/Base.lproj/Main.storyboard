@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="1028" y="157.87106446776613"/>
         </scene>
-        <!--View Controller-->
+        <!--RawHTML Browser View Controller-->
         <scene sceneID="5lI-IT-7bM">
             <objects>
-                <viewController id="WoW-sG-qS9" sceneMemberID="viewController">
+                <viewController id="WoW-sG-qS9" customClass="RawHTMLBrowserViewController" customModule="Dumb_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4fQ-BH-OO6"/>
                         <viewControllerLayoutGuide type="bottom" id="Bsb-ez-L51"/>
@@ -64,20 +64,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="spN-G5-XpT">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="595"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" text="nothing yet..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nqB-PN-6qM">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="573"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="557"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter a URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BcY-uh-1rr">
-                                        <rect key="frame" x="0.0" y="581" width="343" height="22"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-6e-VuH">
+                                        <rect key="frame" x="0.0" y="565" width="343" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter a URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BcY-uh-1rr">
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dn-H4-Bd1">
+                                                <rect key="frame" x="304" y="0.0" width="39" height="30"/>
+                                                <state key="normal" title="Fetch"/>
+                                                <connections>
+                                                    <action selector="fetchRawHtml:" destination="WoW-sG-qS9" eventType="touchUpInside" id="hYE-MI-AMv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -85,19 +97,23 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="spN-G5-XpT" secondAttribute="trailing" id="0Bs-12-SEk"/>
                             <constraint firstItem="spN-G5-XpT" firstAttribute="top" secondItem="4fQ-BH-OO6" secondAttribute="bottom" id="gRg-el-Oo8"/>
-                            <constraint firstItem="Bsb-ez-L51" firstAttribute="top" secondItem="spN-G5-XpT" secondAttribute="bottom" id="hhG-wR-Q3z"/>
+                            <constraint firstItem="Bsb-ez-L51" firstAttribute="top" secondItem="spN-G5-XpT" secondAttribute="bottom" constant="8" id="hhG-wR-Q3z"/>
                             <constraint firstItem="spN-G5-XpT" firstAttribute="leading" secondItem="vJZ-cl-Ehg" secondAttribute="leadingMargin" id="oDM-8S-d8B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="nqB-PN-6qM" id="xhZ-Ma-KTa"/>
+                        <outlet property="urlField" destination="BcY-uh-1rr" id="tzc-jM-MVo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp2-YO-4Fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1780" y="97"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Browser View Controller-->
         <scene sceneID="8ny-QB-8LI">
             <objects>
-                <viewController id="QGX-W4-h6C" sceneMemberID="viewController">
+                <viewController id="QGX-W4-h6C" customClass="ImageBrowserViewController" customModule="Dumb_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8S6-K1-f9e"/>
                         <viewControllerLayoutGuide type="bottom" id="WFR-Hg-V0S"/>
@@ -107,17 +123,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pus-aI-zEi">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="595"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-20-m5V">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="573"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-20-m5V">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="557"/>
+                                        <color key="backgroundColor" red="0.79204842931937169" green="0.79204842931937169" blue="0.79204842931937169" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter an image url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-3o-oaf">
-                                        <rect key="frame" x="0.0" y="581" width="343" height="22"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yed-Aq-ydK">
+                                        <rect key="frame" x="0.0" y="565" width="343" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter an image url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-3o-oaf">
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtm-la-Xvc">
+                                                <rect key="frame" x="293" y="0.0" width="50" height="30"/>
+                                                <state key="normal" title="Display"/>
+                                                <connections>
+                                                    <action selector="fetchImage:" destination="QGX-W4-h6C" eventType="touchUpInside" id="FWs-f4-5sJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -126,9 +155,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pus-aI-zEi" secondAttribute="trailing" id="Cu9-HJ-ykK"/>
                             <constraint firstItem="pus-aI-zEi" firstAttribute="leading" secondItem="Bo9-M9-b9u" secondAttribute="leadingMargin" id="S7y-aK-ta5"/>
                             <constraint firstItem="pus-aI-zEi" firstAttribute="top" secondItem="8S6-K1-f9e" secondAttribute="bottom" id="VHX-Mr-oTk"/>
-                            <constraint firstItem="WFR-Hg-V0S" firstAttribute="top" secondItem="pus-aI-zEi" secondAttribute="bottom" id="p8Z-6h-WWN"/>
+                            <constraint firstItem="WFR-Hg-V0S" firstAttribute="top" secondItem="pus-aI-zEi" secondAttribute="bottom" constant="8" id="p8Z-6h-WWN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="7dU-20-m5V" id="0Sd-TO-7Tf"/>
+                        <outlet property="urlField" destination="HQX-3o-oaf" id="uFE-Hm-bSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZB-Sg-ztw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
