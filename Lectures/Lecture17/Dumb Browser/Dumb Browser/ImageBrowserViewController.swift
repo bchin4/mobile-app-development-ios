@@ -27,7 +27,8 @@ class ImageBrowserViewController: UIViewController {
     @IBAction func fetchImage(_ sender: Any) {
         let url = urlField.text!
         
-        imageFetcher.fetchImage(url: url) { (fetchResult) -> Void in
+        imageFetcher.fetchImage(url: url) {
+            (fetchResult) -> Void in
             
             switch(fetchResult) {
             case let .ImageSuccess(image):
@@ -35,6 +36,9 @@ class ImageBrowserViewController: UIViewController {
                     self.imageView.image = image
                 }
             case let .ImageFailure(error):
+                OperationQueue.main.addOperation {
+                    self.imageView.image = #imageLiteral(resourceName: "oops")
+                }
                 print("error: \(error)")
             }
             

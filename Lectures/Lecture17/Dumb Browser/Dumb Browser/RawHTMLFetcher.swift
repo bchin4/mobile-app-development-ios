@@ -10,6 +10,7 @@ import Foundation
 
 enum RawHTMLFetchError: Error {
     case BadURL
+    case NotImplementedYet
 }
 
 enum RawHTMLFetchResult {
@@ -18,10 +19,7 @@ enum RawHTMLFetchResult {
 }
 
 class RawHTMLFetcher {
-    let session: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config)
-    }()
+    let session = URLSession(configuration: URLSessionConfiguration.default)
     
     func fetchRawHTML(url: String,
                       completion: @escaping (RawHTMLFetchResult) -> Void) {

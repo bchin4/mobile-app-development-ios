@@ -19,10 +19,7 @@ enum ImageFetchResult {
 }
 
 class ImageFetcher {
-    let session: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config)
-    }()
+    let session = URLSession(configuration: URLSessionConfiguration.default)
     
     func fetchImage(url: String, completion: @escaping (ImageFetchResult) -> Void) {
         if let imageURL = URL(string: url) {

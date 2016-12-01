@@ -27,7 +27,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-tc-dAI">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <state key="normal" title="Text Browser"/>
+                                        <state key="normal" title="Raw HTML Browser"/>
                                         <connections>
                                             <segue destination="WoW-sG-qS9" kind="show" id="wmW-Rp-ezQ"/>
                                         </connections>

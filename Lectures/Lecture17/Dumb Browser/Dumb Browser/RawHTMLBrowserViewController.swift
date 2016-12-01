@@ -33,12 +33,14 @@ class RawHTMLBrowserViewController: UIViewController {
                 OperationQueue.main.addOperation() {
                     self.textView.text = html
                 }
+                print("success: \(html)")
             case let .FetchFailure(error):
                 // need to insure that interface updates happen
                 // in the main thread
                 OperationQueue.main.addOperation() {
                     self.textView.text = "error: \(error)"
                 }
+                print("error: \(error)")
             }
         }
     }

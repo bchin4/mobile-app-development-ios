@@ -61,4 +61,36 @@ class StockQuoteViewController: UIViewController {
             label.text = "not available"
         }
     }
+    
+    //
+    // trailing closure examples (for reference only)
+    //
+    
+    //function expects a closure as the last parameter
+    func foo(first: String, second: String, third: (Int, Double) -> Void) {
+        print(first)
+        print(second)
+        third(1, 2.0)
+    }
+    
+    // call the function with a closure in the argument list
+    func callFoo() {
+        foo(first: "a",
+            second: "b",
+            third: { (anInt: Int, aDouble: Double) -> Void in
+                print(anInt)
+                print(aDouble)
+        })
+    }
+    
+    // or use a trailing closure instead
+    func callFooToo() {
+        foo(first: "a", second: "b") {
+            (anInt, aDouble) -> Void in
+            print(anInt)
+            print(aDouble)
+        }
+    }
+    
+    
 }

@@ -29,7 +29,7 @@ class StockQuoteFetcher {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
     }()
-    
+
     
     func fetchStockQuote(for symbol: String, completion: @escaping (StockQuoteResult) -> Void) {
         
