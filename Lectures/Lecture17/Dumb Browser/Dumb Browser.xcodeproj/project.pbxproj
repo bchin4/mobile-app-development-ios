@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		604F43C61DF0CB420057935E /* WebBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F43C51DF0CB420057935E /* WebBrowserController.swift */; };
 		60C7A1351DED2867001BD82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7A1341DED2867001BD82C /* AppDelegate.swift */; };
 		60C7A1371DED2867001BD82C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7A1361DED2867001BD82C /* ViewController.swift */; };
 		60C7A13A1DED2867001BD82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C7A1381DED2867001BD82C /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		604F43C51DF0CB420057935E /* WebBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserController.swift; sourceTree = "<group>"; };
 		60C7A1311DED2867001BD82C /* Dumb Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dumb Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C7A1341DED2867001BD82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C7A1361DED2867001BD82C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				60C7A1501DEDBC65001BD82C /* StockQuoteViewController.swift */,
 				60C7A1521DEDBC8A001BD82C /* StockQuoteFetcher.swift */,
 				60C7A1541DEDBD64001BD82C /* Stock.swift */,
+				604F43C51DF0CB420057935E /* WebBrowserController.swift */,
 			);
 			path = "Dumb Browser";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				60C7A14F1DED3528001BD82C /* RawHTMLBrowserViewController.swift in Sources */,
 				60C7A1531DEDBC8A001BD82C /* StockQuoteFetcher.swift in Sources */,
 				60C7A1471DED2BA5001BD82C /* ImageBrowserViewController.swift in Sources */,
+				604F43C61DF0CB420057935E /* WebBrowserController.swift in Sources */,
 				60C7A1351DED2867001BD82C /* AppDelegate.swift in Sources */,
 				60C7A1551DEDBD64001BD82C /* Stock.swift in Sources */,
 			);
@@ -330,6 +334,7 @@
 				60C7A1451DED2867001BD82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

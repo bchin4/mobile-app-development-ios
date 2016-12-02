@@ -46,8 +46,15 @@
                                             <segue destination="Sfi-vH-epe" kind="show" id="Jid-us-U5U"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqq-0u-SiA">
+                                        <rect key="frame" x="0.0" y="114" width="343" height="30"/>
+                                        <state key="normal" title="Web View"/>
+                                        <connections>
+                                            <segue destination="IP0-4E-Xrb" kind="show" id="gli-za-GMU"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="CuE-kI-Q3j">
-                                        <rect key="frame" x="0.0" y="114" width="343" height="489"/>
+                                        <rect key="frame" x="0.0" y="152" width="343" height="451"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -372,6 +379,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne6-kf-gQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="893"/>
+        </scene>
+        <!--Web Browser Controller-->
+        <scene sceneID="MY4-YF-EaP">
+            <objects>
+                <viewController id="IP0-4E-Xrb" customClass="WebBrowserController" customModule="Dumb_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pn8-hH-fFu"/>
+                        <viewControllerLayoutGuide type="bottom" id="SAI-4H-UAB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WaP-pb-OJA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uT2-hA-2KH">
+                                <rect key="frame" x="16" y="64" width="343" height="595"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="Uhj-mt-4XL">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="557"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </webView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Eef-VY-hiw">
+                                        <rect key="frame" x="0.0" y="565" width="343" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-U7-VNs">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOI-Fg-SSK">
+                                                <rect key="frame" x="313" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Go!"/>
+                                                <connections>
+                                                    <action selector="go:" destination="IP0-4E-Xrb" eventType="touchUpInside" id="kW2-zx-VYG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uT2-hA-2KH" secondAttribute="trailing" id="ZG3-HP-SMF"/>
+                            <constraint firstItem="SAI-4H-UAB" firstAttribute="top" secondItem="uT2-hA-2KH" secondAttribute="bottom" constant="8" id="jDD-hU-ius"/>
+                            <constraint firstItem="uT2-hA-2KH" firstAttribute="leading" secondItem="WaP-pb-OJA" secondAttribute="leadingMargin" id="w5r-Qh-4xw"/>
+                            <constraint firstItem="uT2-hA-2KH" firstAttribute="top" secondItem="Pn8-hH-fFu" secondAttribute="bottom" id="xjv-da-WAb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="urlField" destination="ljM-U7-VNs" id="6cf-I6-Msv"/>
+                        <outlet property="webView" destination="Uhj-mt-4XL" id="ozH-Kv-8xt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeo-kx-7ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="951"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6fw-LG-A18">
