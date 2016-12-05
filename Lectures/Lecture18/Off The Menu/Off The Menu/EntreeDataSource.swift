@@ -33,64 +33,17 @@ class EntreeDataSource: NSObject, UICollectionViewDataSource {
         super.init()
     }
     
-    func addEntree(name: String, price: String, details: String, uid: String) -> Entree? {
-        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-            return nil
-        }
-        
-        let managedContext = delegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Entree", in: managedContext)!
-        
-        let entree: Entree
-        
-        if let found = findEntree(with: uid) {
-            entree = found
-        }
-        else {
-            entree = Entree(entity: entity, insertInto: managedContext)
-            entree.entreeID = uid
-            entrees.append(entree)
-        }
-        
-        entree.name = name
-        entree.price = price
-        entree.details = details
-        
-        do {
-            try managedContext.save()
+    //
+    // MARK: entree management (creation and persistence)
+    //
+    
+    func getEntree(uid: String) -> Entree? {
+        if let entree = findEntree(with: uid) {
             return entree
         }
-        catch let error as NSError {
-            print("Failed to save Entree.  \(error), \(error.userInfo)")
-            return nil
+        else {
+            return newEntree(with: uid)
         }
-        
-//        if let entree = findEntree(with: uid) {
-//            entree.name = name
-//            entree.price = price
-//            entree.details = details
-//        }
-//        else {
-//        
-//        
-//            
-//        = Entree(entity: entity, insertInto: managedContext)
-//        
-//        entree.name = name
-//        entree.price = price
-//        entree.details = details
-//        entree.entreeID = uid
-//        
-//        do {
-//            try managedContext.save()
-//            entrees.append(entree)
-//            return entree
-//        }
-//        catch let error as NSError {
-//            print("Failed to save Entree.  \(error), \(error.userInfo)")
-//            return nil
-//        }
     }
     
     func findEntree(with uid: String) -> Entree? {
@@ -101,6 +54,49 @@ class EntreeDataSource: NSObject, UICollectionViewDataSource {
         }
         return nil
     }
+    
+    func newEntree(with uid: String) -> Entree? {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return nil
+        }
+        
+        let managedContext = delegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Entree", in: managedContext)!
+        
+        let entree = Entree(entity: entity, insertInto: managedContext)
+        entree.entreeID = uid
+        
+        do {
+            try managedContext.save()
+            entrees.append(entree)
+            return entree
+        }
+        catch let error as NSError {
+            print("Failed to save Entree.  \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
+    func save() {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            print("Failed to save.")
+            return
+        }
+        
+        let managedContext = delegate.persistentContainer.viewContext
+        
+        do {
+            try managedContext.save()
+        }
+        catch let error as NSError {
+            print("Failed to save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    //
+    // MARK: data source functions
+    //
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return entrees.count

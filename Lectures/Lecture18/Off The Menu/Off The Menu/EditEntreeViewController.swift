@@ -20,9 +20,9 @@ class EditEntreeViewController: UIViewController, UINavigationControllerDelegate
     
     @IBOutlet var cameraButton: UIBarButtonItem!
     
-    let uid = NSUUID().uuidString
-    
     var entrees: EntreeDataSource!
+    
+    let uid = NSUUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,13 @@ class EditEntreeViewController: UIViewController, UINavigationControllerDelegate
         super.viewWillDisappear(animated)
         
         // save entree
-        let name = nameField.text!
-        let price = priceField.text!
-        let details = detailsArea.text!
-        if let entree = entrees.addEntree(name: name, price: price, details: details, uid: uid) {
+        if let entree = entrees.getEntree(uid: uid) {
+            entree.name = nameField.text!
+            entree.price = priceField.text!
+            entree.details = detailsArea.text!
             // save image
             ImageHelper.saveImage(foodImage.image!, forUID: entree.entreeID!)
+            entrees.save()
         }
         else {
             print("Persistence failed!")
