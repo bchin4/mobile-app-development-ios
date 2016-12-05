@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ViewEntreeViewController: UIViewController {
-    @IBOutlet var nameLabel: UILabel!
-    
+class ViewEntreeViewController: UIViewController {    
     @IBOutlet var priceLabel: UILabel!
     
     @IBOutlet var detailsLabel: UILabel!

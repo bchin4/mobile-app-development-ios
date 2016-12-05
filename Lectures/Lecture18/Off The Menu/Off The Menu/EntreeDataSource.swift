@@ -10,7 +10,28 @@ import UIKit
 import CoreData
 
 class EntreeDataSource: NSObject, UICollectionViewDataSource {
-    var entrees = [Entree]()
+    var entrees: [Entree]
+    
+    override init() {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            let managedContext = delegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<Entree>(entityName: "Entree")
+            
+            do {
+                entrees = try managedContext.fetch(fetchRequest)
+            }
+            catch let error as NSError {
+                print("Failed to load persistent data. \(error), \(error.userInfo)")
+                entrees = [Entree]()
+            }
+        }
+        else {
+            entrees = [Entree]()
+        }
+        
+        super.init()
+    }
     
     func addEntree(name: String, price: String, details: String) -> Entree? {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {

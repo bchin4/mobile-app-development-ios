@@ -25,6 +25,8 @@ class EditEntreeViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Add New Menu Item"
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera) == false {
             cameraButton.isEnabled = false
         }
