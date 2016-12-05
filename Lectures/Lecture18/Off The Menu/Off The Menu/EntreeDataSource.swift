@@ -33,7 +33,7 @@ class EntreeDataSource: NSObject, UICollectionViewDataSource {
         super.init()
     }
     
-    func addEntree(name: String, price: String, details: String) -> Entree? {
+    func addEntree(name: String, price: String, details: String, uid: String) -> Entree? {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             return nil
         }
@@ -42,22 +42,64 @@ class EntreeDataSource: NSObject, UICollectionViewDataSource {
         
         let entity = NSEntityDescription.entity(forEntityName: "Entree", in: managedContext)!
         
-        let entree = Entree(entity: entity, insertInto: managedContext)
+        let entree: Entree
+        
+        if let found = findEntree(with: uid) {
+            entree = found
+        }
+        else {
+            entree = Entree(entity: entity, insertInto: managedContext)
+            entree.entreeID = uid
+            entrees.append(entree)
+        }
         
         entree.name = name
         entree.price = price
         entree.details = details
-        entree.entreeID = NSUUID().uuidString
         
         do {
             try managedContext.save()
-            entrees.append(entree)
             return entree
         }
         catch let error as NSError {
             print("Failed to save Entree.  \(error), \(error.userInfo)")
             return nil
         }
+        
+//        if let entree = findEntree(with: uid) {
+//            entree.name = name
+//            entree.price = price
+//            entree.details = details
+//        }
+//        else {
+//        
+//        
+//            
+//        = Entree(entity: entity, insertInto: managedContext)
+//        
+//        entree.name = name
+//        entree.price = price
+//        entree.details = details
+//        entree.entreeID = uid
+//        
+//        do {
+//            try managedContext.save()
+//            entrees.append(entree)
+//            return entree
+//        }
+//        catch let error as NSError {
+//            print("Failed to save Entree.  \(error), \(error.userInfo)")
+//            return nil
+//        }
+    }
+    
+    func findEntree(with uid: String) -> Entree? {
+        for entree in entrees {
+            if entree.entreeID == uid {
+                return entree
+            }
+        }
+        return nil
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

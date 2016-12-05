@@ -20,6 +20,8 @@ class EditEntreeViewController: UIViewController, UINavigationControllerDelegate
     
     @IBOutlet var cameraButton: UIBarButtonItem!
     
+    let uid = NSUUID().uuidString
+    
     var entrees: EntreeDataSource!
     
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class EditEntreeViewController: UIViewController, UINavigationControllerDelegate
         let name = nameField.text!
         let price = priceField.text!
         let details = detailsArea.text!
-        if let entree = entrees.addEntree(name: name, price: price, details: details) {
+        if let entree = entrees.addEntree(name: name, price: price, details: details, uid: uid) {
             // save image
             ImageHelper.saveImage(foodImage.image!, forUID: entree.entreeID!)
         }
