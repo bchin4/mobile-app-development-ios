@@ -42,6 +42,7 @@ class ViewController: UIViewController {
                 
                 let viewEntreeVC = segue.destination as! ViewEntreeViewController
                 viewEntreeVC.entree = entree
+                viewEntreeVC.entrees = entreeDataSource
             }
         }
     }

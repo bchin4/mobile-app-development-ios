@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewEntreeViewController: UIViewController {    
+class ViewEntreeViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     
     @IBOutlet var detailsLabel: UILabel!
@@ -21,11 +21,18 @@ class ViewEntreeViewController: UIViewController {
         }
     }
     
+    var entrees: EntreeDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         priceLabel.text = entree.price
         detailsLabel.text = entree.details
         foodImage.image = ImageHelper.getImage(forUID: entree.entreeID!)!
+    }
+    
+    @IBAction func deleteEntree(_ sender: Any) {
+        entrees.deleteEntree(entree: entree)
+        navigationController!.popViewController(animated: true)
     }
 }
