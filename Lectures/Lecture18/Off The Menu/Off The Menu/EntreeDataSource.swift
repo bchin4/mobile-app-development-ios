@@ -67,20 +67,15 @@ class EntreeDataSource: NSObject, UICollectionViewDataSource {
         let entree = Entree(entity: entity, insertInto: managedContext)
         entree.entreeID = uid
         
-        do {
-            try managedContext.save()
-            entrees.append(entree)
-            return entree
-        }
-        catch let error as NSError {
-            print("Failed to save Entree.  \(error), \(error.userInfo)")
-            return nil
-        }
+ 
+        entrees.append(entree)
+        save()
+        return entree
     }
     
     func deleteEntree(entree: Entree) {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-            print("Failed to save.")
+            print("Failed to delete.")
             return
         }
         
