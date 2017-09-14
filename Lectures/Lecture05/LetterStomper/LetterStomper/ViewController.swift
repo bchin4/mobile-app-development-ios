@@ -17,16 +17,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var replacementChar: String?
     
-    @IBAction func messageReceived(textField: UITextField) {
+    @IBAction func messageReceived(_ textField: UITextField) {
         updateMessage()
     }
     
-    @IBAction func replacementCharacterChanged(textField: UITextField) {
+    @IBAction func replacementCharacterChanged(_ textField: UITextField) {
         replacementChar = textField.text
         updateMessage()
     }
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         stompedTextField.resignFirstResponder()
         toStompTextField.resignFirstResponder()
     }
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let old = stompedTextField.text {
             let new: String
             if let replacement = replacementChar {
-              new = old.stringByReplacingOccurrencesOfString(replacement, withString: "*")
+              new = old.replacingOccurrences(of: replacement, with: "*")
             }
             else {
                 new = old
@@ -60,14 +60,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textField(textField: UITextField,
-                   shouldChangeCharactersInRange range: NSRange,
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         
         //print("current:\(range)")
         //print("replace:\(string)")
         
-        if let current = textField.text where !current.isEmpty {
+        if let current = textField.text, !current.isEmpty {
             return string.characters.count == 0
         }
         else
