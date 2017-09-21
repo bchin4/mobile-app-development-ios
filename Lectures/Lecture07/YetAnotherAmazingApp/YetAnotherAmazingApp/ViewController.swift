@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         // first bar
         let first = getColorBar()
         first.addTarget(self,
-                            action: "toggleFirstChannel:",
-                            forControlEvents: UIControlEvents.ValueChanged)
+                            action: #selector(ViewController.toggleFirstChannel(_:)),
+                            for: UIControlEvents.valueChanged)
         
         
         first.frame = CGRect(x: 200, y:200, width: 200, height: 50)
@@ -29,41 +29,41 @@ class ViewController: UIViewController {
         
         view.addSubview(first)
         
-        let firstTopConstraint = first.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor, constant: 24)
-        let firstLeadingConstraint = first.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor)
-        let firstTrailingConstraint = first.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor)
+        let firstTopConstraint = first.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 24)
+        let firstLeadingConstraint = first.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        let firstTrailingConstraint = first.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         
-        firstTopConstraint.active = true
-        firstLeadingConstraint.active = true
-        firstTrailingConstraint.active = true
+        firstTopConstraint.isActive = true
+        firstLeadingConstraint.isActive = true
+        firstTrailingConstraint.isActive = true
 
         // second bar
         let second = getColorBar()
         second.addTarget(self,
-                        action: "toggleSecondChannel:",
-                        forControlEvents: .ValueChanged)
+                        action: #selector(ViewController.toggleSecondChannel(_:)),
+                        for: .valueChanged)
         view.addSubview(second)
         
-        let secondHorizontalConstraint = second.centerXAnchor.constraintEqualToAnchor(margins.centerXAnchor)
-        let secondVerticalConstraint = second.centerYAnchor.constraintEqualToAnchor(margins.centerYAnchor)
+        let secondHorizontalConstraint = second.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+        let secondVerticalConstraint = second.centerYAnchor.constraint(equalTo: margins.centerYAnchor)
 
-        secondHorizontalConstraint.active = true
-        secondVerticalConstraint.active = true
+        secondHorizontalConstraint.isActive = true
+        secondVerticalConstraint.isActive = true
         
         // third bar
         let third = getColorBar()
         third.addTarget(self,
-                        action: "toggleThirdChannel:",
-                        forControlEvents: .ValueChanged)
+                        action: #selector(ViewController.toggleThirdChannel(_:)),
+                        for: .valueChanged)
         view.addSubview(third)
         
-        let thirdTopConstraint = third.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor, constant: -24)
-        let thirdLeadingConstraint = third.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor)
-        let thirdTrailingConstraint = third.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor)
+        let thirdTopConstraint = third.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -24)
+        let thirdLeadingConstraint = third.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        let thirdTrailingConstraint = third.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         
-        thirdTopConstraint.active = true
-        thirdLeadingConstraint.active = true
-        thirdTrailingConstraint.active = true
+        thirdTopConstraint.isActive = true
+        thirdLeadingConstraint.isActive = true
+        thirdTrailingConstraint.isActive = true
     }
     
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func toggleFirstChannel(buttonBar: UISegmentedControl) {
+    func toggleFirstChannel(_ buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
         model.toggleFirstChannel(RED: index == 0,
                                  GREEN: index == 1,
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         view.backgroundColor = model.getColor()
     }
     
-    func toggleSecondChannel(buttonBar: UISegmentedControl) {
+    func toggleSecondChannel(_ buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
         model.toggleSecondChannel(RED: index == 0,
                                   GREEN: index == 1,
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         view.backgroundColor = model.getColor()
     }
     
-    func toggleThirdChannel(buttonBar: UISegmentedControl) {
+    func toggleThirdChannel(_ buttonBar: UISegmentedControl) {
         let index = buttonBar.selectedSegmentIndex
         model.toggleThirdChannel(RED: index == 0,
                                  GREEN: index == 1,
