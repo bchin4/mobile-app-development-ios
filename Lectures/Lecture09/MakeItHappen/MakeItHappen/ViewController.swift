@@ -94,12 +94,11 @@ class ViewController: UIViewController {
     func animateTopLeftEnd() {
         let height = view.frame.height
         self.topLeftY.constant -= height
-        UIView.animate(
-            withDuration: 2,
-            animations: { _ in
-                self.topLeft.text = "I'm back!"
-                self.view.layoutIfNeeded()
-            })
+        
+        UIView.animate(withDuration: 2, animations: { () -> Void in
+            self.topLeft.text = "I'm back!"
+            self.view.layoutIfNeeded()
+        })
     }
     
     // slowly fades the top right label out
@@ -200,12 +199,12 @@ class ViewController: UIViewController {
         })
     }
     
-    func randomFloat() -> Float {
-        return Float(arc4random()) / Float(UINT32_MAX)
+    func randomFloat() -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
     }
     
-    func randomColor(alpha: Float) -> UIColor {
-        return UIColor(colorLiteralRed: randomFloat(),
+    func randomColor(alpha: CGFloat) -> UIColor {
+        return UIColor(red: randomFloat(),
                        green: randomFloat(),
                        blue: randomFloat(),
                        alpha: alpha) // always opaque
