@@ -42,7 +42,7 @@ class StuffViewController: UITableViewController {
     
     @IBAction func toggleEditMode(_ sender: UIButton) {
         if isEditing == false {
-            setEditing(true, animated: true)
+            setEditing(true, animated: false)
             sender.setTitle("Done", for: .normal)
         }
         else {
