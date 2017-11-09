@@ -11,9 +11,19 @@ import UIKit
 class Surface: UIView {
     static let DEFAULT_BRUSH_SIZE = CGFloat(5.0)
     static let MAXIMUM_BRUSH_SIZE = CGFloat(180)
+    static let DRAWING_TOOL_FACTORIES: [DrawingToolType:DrawingToolFactory] = {
+        var factories = [DrawingToolType:DrawingToolFactory]()
+        
+        factories[DrawingToolType.CIRCLE] = CircleFactory()
+        factories[DrawingToolType.LINE] = LineFactory()
+        factories[DrawingToolType.SQUIGGLE] = SquiggleFactory()
+        
+        return factories
+    }()
     
     var currentType: DrawingToolType = .LINE
     var currentDrawingTool: DrawingTool?
+    
     var drawingTools = [DrawingTool]()
     var redoHistory = [DrawingTool]()
     var brushSize = DEFAULT_BRUSH_SIZE
@@ -21,13 +31,17 @@ class Surface: UIView {
     var paintColor = UIColor.black
     
     func setCurrentDrawingTool(drawingTool type: DrawingToolType) {
+        print("Setting tool type to: " + type.rawValue)
         currentType = type
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: self)
-        currentDrawingTool = DrawingToolFactory.makeTool(type: currentType, start: location, color: paintColor, size: brushSize)
+        
+        let drawingToolFactory = Surface.DRAWING_TOOL_FACTORIES[currentType]!
+        
+        currentDrawingTool = drawingToolFactory.makeDrawingTool(start: location, color: paintColor, size: brushSize)
         drawingTools.append(currentDrawingTool!)
         setNeedsDisplay()
     }

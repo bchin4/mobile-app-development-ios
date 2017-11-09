@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum DrawingToolType {
-    case LINE
-    case SQUIGGLE
-    case CIRCLE
+enum DrawingToolType: String {
+    case LINE = "Line"
+    case SQUIGGLE = "Squiggle"
+    case CIRCLE = "Circle"
 }

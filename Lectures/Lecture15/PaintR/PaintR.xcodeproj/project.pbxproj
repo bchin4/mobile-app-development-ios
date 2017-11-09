@@ -19,6 +19,7 @@
 		6049B4B51DDAA75C00CF4F36 /* DrawingToolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B41DDAA75C00CF4F36 /* DrawingToolFactory.swift */; };
 		6049B4B71DDAAD3100CF4F36 /* Squiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */; };
 		6049B4B91DDAB17F00CF4F36 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B81DDAB17F00CF4F36 /* Circle.swift */; };
+		60E69A3F1FB4CD74008095C3 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E69A3E1FB4CD74008095C3 /* Factories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6049B4B41DDAA75C00CF4F36 /* DrawingToolFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingToolFactory.swift; sourceTree = "<group>"; };
 		6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squiggle.swift; sourceTree = "<group>"; };
 		6049B4B81DDAB17F00CF4F36 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		60E69A3E1FB4CD74008095C3 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,15 +76,24 @@
 				6049B4A11DDAA2F800CF4F36 /* Assets.xcassets */,
 				6049B4A31DDAA2F800CF4F36 /* LaunchScreen.storyboard */,
 				6049B4A61DDAA2F800CF4F36 /* Info.plist */,
+				60E69A3B1FB4CD05008095C3 /* tools */,
+				6049B4B01DDAA6C300CF4F36 /* Surface.swift */,
+			);
+			path = PaintR;
+			sourceTree = "<group>";
+		};
+		60E69A3B1FB4CD05008095C3 /* tools */ = {
+			isa = PBXGroup;
+			children = (
 				6049B4AC1DDAA34200CF4F36 /* DrawingTool.swift */,
 				6049B4AE1DDAA52100CF4F36 /* Line.swift */,
-				6049B4B01DDAA6C300CF4F36 /* Surface.swift */,
 				6049B4B21DDAA71D00CF4F36 /* DrawingToolType.swift */,
 				6049B4B41DDAA75C00CF4F36 /* DrawingToolFactory.swift */,
 				6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */,
 				6049B4B81DDAB17F00CF4F36 /* Circle.swift */,
+				60E69A3E1FB4CD74008095C3 /* Factories.swift */,
 			);
-			path = PaintR;
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 				6049B4AD1DDAA34200CF4F36 /* DrawingTool.swift in Sources */,
 				6049B49B1DDAA2F800CF4F36 /* AppDelegate.swift in Sources */,
 				6049B4B31DDAA71D00CF4F36 /* DrawingToolType.swift in Sources */,
+				60E69A3F1FB4CD74008095C3 /* Factories.swift in Sources */,
 				6049B4B11DDAA6C300CF4F36 /* Surface.swift in Sources */,
 				6049B4B51DDAA75C00CF4F36 /* DrawingToolFactory.swift in Sources */,
 			);
