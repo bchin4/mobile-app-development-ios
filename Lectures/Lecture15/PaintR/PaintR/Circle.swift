@@ -24,7 +24,7 @@ class Circle: DrawingTool {
         let radius = sqrt( pow(start.x - centerX, 2) +
                            pow(start.y - centerY, 2))
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
         
         if let shape = shapeLayer,
            let layers = view.layer.sublayers,
