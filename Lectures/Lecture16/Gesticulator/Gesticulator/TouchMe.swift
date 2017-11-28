@@ -42,13 +42,29 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(TouchMe.longPress(_:)))
         addGestureRecognizer(longPress)
         
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(TouchMe.pinch(_:)))
+        pinch.delegate = self
+        addGestureRecognizer(pinch)
+        
+        let rotate = UIRotationGestureRecognizer(target: self, action: #selector(TouchMe.rotate(_:)))
+        rotate.delegate = self
+        addGestureRecognizer(rotate)
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(TouchMe.swipe(_:)))
+        swipe.delegate = self
+        addGestureRecognizer(swipe)
+        
         let pan = UIPanGestureRecognizer(target: self, action: #selector(TouchMe.pan(_:)))
         pan.delegate = self
+        tap.require(toFail: rotate)
+        tap.require(toFail: swipe) // doesn't seem to work
         addGestureRecognizer(pan)
     }
     
-    
     func notifyGestureListeners(gesture: Gesture) {
+        // hack to get the menu to go away if it's still open
+        UIMenuController.shared.setMenuVisible(false, animated: true)
+        // notify listeners that the gesture happened!
         for listener in gestureListeners {
             listener.gestureDidHappen(gesture)
         }
@@ -74,7 +90,7 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
     }
     
     // MARK: gesture actions
-    func tap(_ recognizer: UIGestureRecognizer) {
+    @objc func tap(_ recognizer: UIGestureRecognizer) {
         print("tapped!")
         notifyGestureListeners(type: "Tap", recognizer: recognizer)
         
@@ -97,24 +113,40 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
         menu.setMenuVisible(true, animated: true)
     }
     
-    func doubleTap(_ recognizer: UIGestureRecognizer) {
+    @objc func doubleTap(_ recognizer: UIGestureRecognizer) {
         print("double tapped!")
         notifyGestureListeners(type: "Double Tap", recognizer: recognizer)
     }
     
-    func longPress(_ recognizer: UIGestureRecognizer) {
+    @objc func longPress(_ recognizer: UIGestureRecognizer) {
         print("long press")
         notifyGestureListeners(type: "Long Press", recognizer: recognizer)
     }
     
-    func pan(_ recognizer: UIPanGestureRecognizer) {
+    @objc func pan(_ recognizer: UIPanGestureRecognizer) {
         print("pan")
         notifyGestureListeners(type: "Pan", recognizer: recognizer)
     }
     
-    func tripleTap(_ recognizer: UIPanGestureRecognizer) {
+    @objc func tripleTap(_ recognizer: UIPanGestureRecognizer) {
         print("triple tap!")
         notifyGestureListeners(type: "Triple Tap!", recognizer: recognizer)
+    }
+    
+    @objc func rotate(_ recognizer: UIRotationGestureRecognizer) {
+        print("rotate")
+        notifyGestureListeners(type: "Rotate", recognizer: recognizer)
+    }
+    
+    @objc func pinch(_ recognizer: UIPinchGestureRecognizer) {
+        print("pinch")
+        notifyGestureListeners(type: "Pinch", recognizer: recognizer)
+    }
+    
+    // can't seem to get both swipe and pan to work...is there a difference?
+    @objc func swipe(_ recognizer: UISwipeGestureRecognizer) {
+        print("swipe")
+        notifyGestureListeners(type: "Swipe", recognizer: recognizer)
     }
     
     // MARK: gesture recognizer delegate methods
@@ -125,20 +157,19 @@ class TouchMe: UIView, UIGestureRecognizerDelegate {
     
     // MARK: menu handlers
     
-    func setBackgroundColorToRed(_ sender: AnyObject) {
+    @objc func setBackgroundColorToRed(_ sender: AnyObject) {
         backgroundColor = UIColor.red
     }
     
-    func setBackgroundColorToGreen(_ sender: AnyObject) {
+    @objc func setBackgroundColorToGreen(_ sender: AnyObject) {
         backgroundColor = UIColor.green
     }
     
-    func setBackgroundColorToBlue(_ sender: AnyObject) {
+    @objc func setBackgroundColorToBlue(_ sender: AnyObject) {
         backgroundColor = UIColor.blue
     }
     
-    func setBackgroundColorToGray(_ sender: AnyObject) {
-        backgroundColor = UIColor(colorLiteralRed: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+    @objc func setBackgroundColorToGray(_ sender: AnyObject) {
+        backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
     }
-    
 }
