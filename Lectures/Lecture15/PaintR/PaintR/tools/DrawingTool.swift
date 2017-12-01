@@ -10,20 +10,15 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-class DrawingTool: NSObject {
-    let start: CGPoint
-    let color: UIColor
-    let brushSize: CGFloat
-    var finish: CGPoint
+@objc protocol DrawingTool {
     
-    init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
-        self.start = start
-        self.color = color
-        self.brushSize = brushSize
-        finish = start
-    }
+    init(start: CGPoint, color: UIColor, brushSize: CGFloat)
     
-    func draw(on: UIView) {
-        // do nothing
-    }
+    func update(with aPoint: CGPoint)
+    
+    func finish(end: CGPoint)
+    
+    func draw(on aView: UIView)
+    
+    @objc optional func erase(from aView: UIView)
 }

@@ -50,12 +50,17 @@ class Surface: UIView {
         let touch = touches.first!
         let location = touch.location(in: self)
         if let tool = currentDrawingTool {
-            tool.finish = location
+            tool.update(with: location)
         }
         setNeedsDisplay()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+        if let tool = currentDrawingTool {
+            tool.finish(end: location)
+        }
         currentDrawingTool = nil
         setNeedsDisplay()
     }
@@ -67,6 +72,9 @@ class Surface: UIView {
     }
     
     func erase() {
+        for tool in drawingTools {
+            tool.erase?(from: self)
+        }
         drawingTools.removeAll()
         setNeedsDisplay()
     }

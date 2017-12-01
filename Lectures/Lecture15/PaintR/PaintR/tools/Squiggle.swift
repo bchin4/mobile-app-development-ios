@@ -10,33 +10,40 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-class Squiggle: DrawingTool {
+class Squiggle: NSObject, DrawingTool {
     var points = [CGPoint]()
     
-    override var finish: CGPoint {
-        didSet {
-            points.append(finish)
-        }
-    }
+    let color: UIColor
+    let brushSize: CGFloat
     
-    override init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
-        super.init(start: start, color: color, brushSize: brushSize)
+    required init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
         points.append(start)
+        
+        self.color = color
+        self.brushSize = brushSize
     }
     
-    override func draw(on: UIView) {
+    func update(with aPoint: CGPoint) {
+        points.append(aPoint)
+    }
+    
+    func finish(end: CGPoint) {
+        points.append(end)
+    }
+    
+    func draw(on aView: UIView) {
         color.setStroke()
         let path = UIBezierPath()
         path.lineWidth = brushSize
         path.lineCapStyle = CGLineCap.round
-        
+
         path.move(to: points.first!)
         for i in 1..<points.count {
             path.addLine(to: points[i])
             path.move(to: points[i])
         }
-        
-        
+
+
         path.stroke()
     }
 }
