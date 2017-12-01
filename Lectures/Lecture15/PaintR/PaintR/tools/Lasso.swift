@@ -52,15 +52,17 @@ class Lasso: NSObject, DrawingTool {
     }
     
     func draw(on aView: UIView) {
-        // erase(from: aView)
+        erase(from: aView)
         aView.layer.addSublayer(shapeLayer)
     }
     
     func erase(from aView: UIView) {
-        if var layers = aView.layer.sublayers,
-            let index = layers.index(of: shapeLayer) {
-            layers.remove(at: index)
-        }
+        shapeLayer.removeFromSuperlayer()
+        
+//        if var layers = aView.layer.sublayers,
+//            let index = layers.index(of: shapeLayer) {
+//            layers.remove(at: index)
+//        }
     }
     
 }

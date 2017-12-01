@@ -12,26 +12,35 @@ import UIKit
 
 class Circle: NSObject, DrawingTool {
     
-    var shapeLayer: CAShapeLayer?
+    var shapeLayer: CAShapeLayer
     
     let start: CGPoint
     let color: UIColor
+    let brushSize: CGFloat
     
     var end: CGPoint
     
     required init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
         self.start = start
         self.color = color
+        self.brushSize = brushSize
         
         end = start
+        
+        shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.fillColor = color.cgColor
     }
     
     convenience init(start: CGPoint, color: UIColor) {
-        self.init(start: start, color: color, brushSize: CGFloat(0))
+        self.init(start: start, color: color, brushSize: CGFloat(5))
     }
     
     func finish(end: CGPoint) {
         self.end = end
+        shapeLayer.fillColor = color.cgColor
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.path = makeCirclePath()
     }
     
     func update(with aPoint: CGPoint) {
@@ -39,34 +48,29 @@ class Circle: NSObject, DrawingTool {
     }
     
     func draw(on aView: UIView) {
-        let centerX = (start.x + end.x) / 2.0
-        let centerY = (start.y + end.y) / 2.0
-
-        let radius = sqrt( pow(start.x - centerX, 2) +
-                           pow(start.y - centerY, 2))
-
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
-
         erase(from: aView)
+        
+        shapeLayer.path = makeCirclePath()
 
-        let aNewShapeLayer = CAShapeLayer()
-        aNewShapeLayer.frame = aView.frame
-        aNewShapeLayer.path = circlePath.cgPath
-
-        aNewShapeLayer.fillColor = color.cgColor
-        aNewShapeLayer.strokeColor = color.cgColor
-
-        aView.layer.addSublayer(aNewShapeLayer)
-
-        shapeLayer = aNewShapeLayer
+        aView.layer.addSublayer(shapeLayer)
     }
     
     func erase(from aView: UIView) {
-        if let shape = shapeLayer,
-            let layers = aView.layer.sublayers,
-            let index = layers.index(of: shape) {
-            aView.layer.sublayers?.remove(at: index)
-        }
+        shapeLayer.removeFromSuperlayer()
+    }
+    
+    func makeCirclePath() -> CGPath {
+        let centerX = (start.x + end.x) / 2.0
+        let centerY = (start.y + end.y) / 2.0
+        
+        let radius = sqrt( pow(start.x - centerX, 2) +
+            pow(start.y - centerY, 2))
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
+        
+        circlePath.lineWidth = brushSize
+        
+        return circlePath.cgPath
     }
 }
 
