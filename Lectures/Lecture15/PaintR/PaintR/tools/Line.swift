@@ -29,6 +29,7 @@ class Line: NSObject, DrawingTool {
         
         shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = brushSize
     }
     
     convenience init(start: CGPoint, color: UIColor) {

@@ -10,8 +10,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-@objc protocol DrawingTool {
-    
+protocol DrawingTool {
     init(start: CGPoint, color: UIColor, brushSize: CGFloat)
     
     func update(with aPoint: CGPoint)
@@ -20,5 +19,5 @@ import UIKit
     
     func draw(on aView: UIView)
     
-    @objc optional func erase(from aView: UIView)
+    func erase(from aView: UIView)
 }

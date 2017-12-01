@@ -74,7 +74,7 @@ class Surface: UIView {
     
     func erase() {
         for tool in drawingTools {
-            tool.erase?(from: self)
+            tool.erase(from: self)
         }
         drawingTools.removeAll()
         setNeedsDisplay()

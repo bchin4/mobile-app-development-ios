@@ -11,39 +11,47 @@ import CoreGraphics
 import UIKit
 
 class Squiggle: NSObject, DrawingTool {
-    var points = [CGPoint]()
+    static let TRANSPARENT = UIColor(white: 1, alpha: 0).cgColor
     
     let color: UIColor
     let brushSize: CGFloat
+
+    let path: UIBezierPath
+    
+    let shapeLayer: CAShapeLayer
     
     required init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
-        points.append(start)
-        
         self.color = color
         self.brushSize = brushSize
+        
+        shapeLayer = CAShapeLayer()
+        shapeLayer.fillColor = Squiggle.TRANSPARENT
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = brushSize
+        
+        path = UIBezierPath()
+        path.move(to: start)
     }
     
     func update(with aPoint: CGPoint) {
-        points.append(aPoint)
+        path.addLine(to: aPoint)
+        
+        shapeLayer.path = path.cgPath
     }
     
     func finish(end: CGPoint) {
-        points.append(end)
+        path.addLine(to: end)
+        
+        shapeLayer.path = path.cgPath
     }
     
     func draw(on aView: UIView) {
-        color.setStroke()
-        let path = UIBezierPath()
-        path.lineWidth = brushSize
-        path.lineCapStyle = CGLineCap.round
-
-        path.move(to: points.first!)
-        for i in 1..<points.count {
-            path.addLine(to: points[i])
-            path.move(to: points[i])
-        }
-
-
-        path.stroke()
+        erase(from: aView)
+        
+        aView.layer.addSublayer(shapeLayer)
+    }
+    
+    func erase(from aView: UIView) {
+        shapeLayer.removeFromSuperlayer()
     }
 }

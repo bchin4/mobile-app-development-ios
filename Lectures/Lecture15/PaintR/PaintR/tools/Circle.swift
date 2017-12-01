@@ -28,6 +28,7 @@ class Circle: NSObject, DrawingTool {
         end = start
         
         shapeLayer = CAShapeLayer()
+        shapeLayer.lineWidth = 5
         shapeLayer.strokeColor = UIColor.black.cgColor
         shapeLayer.fillColor = color.cgColor
     }
