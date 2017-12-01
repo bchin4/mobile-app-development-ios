@@ -17,6 +17,8 @@ class Line: NSObject, DrawingTool {
     
     var end: CGPoint
     
+    let shapeLayer: CAShapeLayer
+    
     
     required init(start: CGPoint, color: UIColor, brushSize: CGFloat) {
         self.start = start
@@ -24,6 +26,9 @@ class Line: NSObject, DrawingTool {
         self.brushSize = brushSize
         
         end = start
+        
+        shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = color.cgColor
     }
     
     convenience init(start: CGPoint, color: UIColor) {
@@ -32,21 +37,30 @@ class Line: NSObject, DrawingTool {
     
     func finish(end: CGPoint) {
         self.end = end
+        updatePath()
     }
     
     func update(with aPoint: CGPoint) {
         end = aPoint
+        updatePath()
     }
     
     func draw(on aView: UIView) {
-        color.setStroke()
+        erase(from: aView)
+        aView.layer.addSublayer(shapeLayer)
+    }
+    
+    func updatePath() {
         let path = UIBezierPath()
         path.lineWidth = brushSize
-        path.lineCapStyle = CGLineCap.round
-        
         path.move(to: start)
         path.addLine(to: end)
-        path.stroke()
+        
+        shapeLayer.path = path.cgPath
+    }
+    
+    func erase(from aView: UIView) {
+        shapeLayer.removeFromSuperlayer()
     }
 }
 
