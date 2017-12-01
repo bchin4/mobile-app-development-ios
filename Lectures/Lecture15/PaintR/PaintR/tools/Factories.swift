@@ -25,3 +25,9 @@ class SquiggleFactory: DrawingToolFactory {
         return Squiggle(start: start, color: color, brushSize: size)
     }
 }
+
+class LassoFactory: DrawingToolFactory {
+    func makeDrawingTool(start: CGPoint, color: UIColor, size: CGFloat) -> DrawingTool {
+        return Lasso(start: start, color: color, brushSize: size)
+    }
+}

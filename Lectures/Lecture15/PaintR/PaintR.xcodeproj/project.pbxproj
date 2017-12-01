@@ -19,7 +19,7 @@
 		6049B4B51DDAA75C00CF4F36 /* DrawingToolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B41DDAA75C00CF4F36 /* DrawingToolFactory.swift */; };
 		6049B4B71DDAAD3100CF4F36 /* Squiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */; };
 		6049B4B91DDAB17F00CF4F36 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B4B81DDAB17F00CF4F36 /* Circle.swift */; };
-		605C6D9C1FD0C065001F92B6 /* FreeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C6D9B1FD0C065001F92B6 /* FreeShape.swift */; };
+		605C6D9C1FD0C065001F92B6 /* Lasso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C6D9B1FD0C065001F92B6 /* Lasso.swift */; };
 		60E69A3F1FB4CD74008095C3 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E69A3E1FB4CD74008095C3 /* Factories.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		6049B4B41DDAA75C00CF4F36 /* DrawingToolFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingToolFactory.swift; sourceTree = "<group>"; };
 		6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squiggle.swift; sourceTree = "<group>"; };
 		6049B4B81DDAB17F00CF4F36 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		605C6D9B1FD0C065001F92B6 /* FreeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeShape.swift; sourceTree = "<group>"; };
+		605C6D9B1FD0C065001F92B6 /* Lasso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lasso.swift; sourceTree = "<group>"; };
 		60E69A3E1FB4CD74008095C3 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 				6049B4B61DDAAD3100CF4F36 /* Squiggle.swift */,
 				6049B4B81DDAB17F00CF4F36 /* Circle.swift */,
 				60E69A3E1FB4CD74008095C3 /* Factories.swift */,
-				605C6D9B1FD0C065001F92B6 /* FreeShape.swift */,
+				605C6D9B1FD0C065001F92B6 /* Lasso.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6049B49D1DDAA2F800CF4F36 /* ViewController.swift in Sources */,
-				605C6D9C1FD0C065001F92B6 /* FreeShape.swift in Sources */,
+				605C6D9C1FD0C065001F92B6 /* Lasso.swift in Sources */,
 				6049B4AF1DDAA52100CF4F36 /* Line.swift in Sources */,
 				6049B4B91DDAB17F00CF4F36 /* Circle.swift in Sources */,
 				6049B4B71DDAAD3100CF4F36 /* Squiggle.swift in Sources */,

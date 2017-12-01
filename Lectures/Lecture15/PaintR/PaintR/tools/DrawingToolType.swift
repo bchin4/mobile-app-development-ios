@@ -12,4 +12,5 @@ enum DrawingToolType: String {
     case LINE = "Line"
     case SQUIGGLE = "Squiggle"
     case CIRCLE = "Circle"
+    case LASSO = "Lasso"
 }

@@ -37,12 +37,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func setDrawingToolToCircle(_ sender: Any) {
-        // causes huge performance issues.  commenting out until
-        // I get it sorted.
         surface.setCurrentDrawingTool(drawingTool: .CIRCLE)
     }
     
+    @IBAction func setDrawingToolToLasso(_ sender: Any) {
+        surface.setCurrentDrawingTool(drawingTool: .LASSO)
+    }
+    
     @IBAction func eraseSurface(_ sender: Any) {
+        // now works for circles
         surface.erase()
     }
     

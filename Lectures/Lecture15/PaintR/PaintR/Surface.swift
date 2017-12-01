@@ -17,6 +17,7 @@ class Surface: UIView {
         factories[DrawingToolType.CIRCLE] = CircleFactory()
         factories[DrawingToolType.LINE] = LineFactory()
         factories[DrawingToolType.SQUIGGLE] = SquiggleFactory()
+        factories[DrawingToolType.LASSO] = LassoFactory()
         
         return factories
     }()
