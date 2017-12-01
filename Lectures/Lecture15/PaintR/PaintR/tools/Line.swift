@@ -27,7 +27,7 @@ class Line: NSObject, DrawingTool {
     }
     
     convenience init(start: CGPoint, color: UIColor) {
-        self.init(start: start, color: color, brushSize: CGFloat(0))
+        self.init(start: start, color: color, brushSize: CGFloat(5))
     }
     
     func finish(end: CGPoint) {

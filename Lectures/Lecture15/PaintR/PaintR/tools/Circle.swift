@@ -50,6 +50,7 @@ class Circle: NSObject, DrawingTool {
         erase(from: aView)
 
         let aNewShapeLayer = CAShapeLayer()
+        aNewShapeLayer.frame = aView.frame
         aNewShapeLayer.path = circlePath.cgPath
 
         aNewShapeLayer.fillColor = color.cgColor
@@ -67,30 +68,5 @@ class Circle: NSObject, DrawingTool {
             aView.layer.sublayers?.remove(at: index)
         }
     }
-    
-
-//    override func draw(on view: UIView) {
-//        let centerX = (start.x + finish.x) / 2.0
-//        let centerY = (start.y + finish.y) / 2.0
-//
-//        let radius = sqrt( pow(start.x - centerX, 2) +
-//                           pow(start.y - centerY, 2))
-//
-//        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
-//
-//        if let shape = shapeLayer,
-//           let layers = view.layer.sublayers,
-//           let index = layers.index(of: shape) {
-//            view.layer.sublayers?.remove(at: index)
-//        }
-//
-//        shapeLayer = CAShapeLayer()
-//        shapeLayer.path = circlePath.cgPath
-//
-//        shapeLayer.fillColor = color.cgColor
-//        shapeLayer.strokeColor = color.cgColor
-//
-//        view.layer.addSublayer(shapeLayer)
-//    }
 }
 

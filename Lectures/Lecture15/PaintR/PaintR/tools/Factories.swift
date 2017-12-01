@@ -16,7 +16,7 @@ class CircleFactory: DrawingToolFactory {
 
 class LineFactory: DrawingToolFactory {
     func makeDrawingTool(start: CGPoint, color: UIColor, size: CGFloat) -> DrawingTool {
-        return Line(start: start, color: color)
+        return Line(start: start, color: color, brushSize: size)
     }
 }
 

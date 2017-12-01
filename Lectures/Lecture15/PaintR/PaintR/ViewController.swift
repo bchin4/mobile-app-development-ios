@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func eraseSurface(_ sender: Any) {
-        // now works for circles
         surface.erase()
     }
     
