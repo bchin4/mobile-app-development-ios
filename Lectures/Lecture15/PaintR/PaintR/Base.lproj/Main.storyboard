@@ -28,7 +28,11 @@
                                     <constraint firstAttribute="height" constant="44" id="FRQ-sr-fWL"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="camera" id="asi-9I-qh4"/>
+                                    <barButtonItem systemItem="camera" id="asi-9I-qh4">
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="BYZ-38-t0r" id="x8g-N5-L9A"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Line" id="c74-Nf-kDt">
                                         <connections>
                                             <action selector="setDrawingToolToLine:" destination="BYZ-38-t0r" id="BOL-fx-Cho"/>

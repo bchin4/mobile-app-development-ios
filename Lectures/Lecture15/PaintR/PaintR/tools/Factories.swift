@@ -31,3 +31,13 @@ class LassoFactory: DrawingToolFactory {
         return Lasso(start: start, color: color, brushSize: size)
     }
 }
+
+class ImageDrawingToolFactory: DrawingToolFactory {
+    func makeDrawingTool() -> DrawingTool {
+        return makeDrawingTool(start: CGPoint(x: 0, y: 0), color: UIColor.clear, size: 0)
+    }
+    
+    func makeDrawingTool(start: CGPoint, color: UIColor, size: CGFloat) -> DrawingTool {
+        return ImageDrawingTool(start: start, color: color, brushSize: size)
+    }
+}

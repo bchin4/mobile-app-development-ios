@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Use Photos as Image Backgrounds.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use Photos as Image Backgrounds.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

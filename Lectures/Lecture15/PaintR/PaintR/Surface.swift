@@ -18,6 +18,7 @@ class Surface: UIView {
         factories[DrawingToolType.LINE] = LineFactory()
         factories[DrawingToolType.SQUIGGLE] = SquiggleFactory()
         factories[DrawingToolType.LASSO] = LassoFactory()
+        factories[DrawingToolType.IMAGE] = ImageDrawingToolFactory()
         
         return factories
     }()
@@ -32,9 +33,20 @@ class Surface: UIView {
     var paintColor = UIColor.black
     
     func setCurrentDrawingTool(drawingTool type: DrawingToolType) {
-        print("Setting tool type to: " + type.rawValue)
         currentType = type
     }
+    
+    func addImage(image: UIImage) {
+        let imageDrawingToolFactory = Surface.DRAWING_TOOL_FACTORIES[.IMAGE] as! ImageDrawingToolFactory
+        let imageDrawingTool = imageDrawingToolFactory.makeDrawingTool() as! ImageDrawingTool
+        imageDrawingTool.setImage(image: image)
+        drawingTools.append(imageDrawingTool)
+        setNeedsDisplay()
+    }
+    
+    //
+    // MARK: user touch handling functions
+    //
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
@@ -65,6 +77,10 @@ class Surface: UIView {
         currentDrawingTool = nil
         setNeedsDisplay()
     }
+    
+    //
+    // MARK: drawing and erasing functions
+    //
     
     override func draw(_ rect: CGRect) {
         for drawingTool in drawingTools {
